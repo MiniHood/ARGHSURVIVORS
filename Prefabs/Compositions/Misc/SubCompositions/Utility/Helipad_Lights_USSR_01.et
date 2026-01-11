@@ -1,0 +1,15 @@
+StaticModelEntity : "{8CDB9C117669AF4A}Prefabs/Structures/Military/Camps/HelipadImprovised_01/HelipadImprovised_USSR_01.et" {
+ ID "5282DCB5DFC8538F"
+ coords 2166.229 0.277 928.036
+ angles 0 21.746 0
+ {
+  GenericEntity {
+   ID "5E92E7227A7E45AB"
+   components {
+    SCR_EntitySpawnerSlotComponent "{5D2262B11A789A08}" {
+     Enabled 0
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,12 @@
+GenericEntity {
+ ID "5D5E85F95F31C6F0"
+ components {
+  SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
+   m_aIncludedEditableEntityLabels {
+    ARGH_AMBIENT_VEHICLES
+   }
+   m_aExcludedEditableEntityLabels {
+   }
+  }
+ }
+}

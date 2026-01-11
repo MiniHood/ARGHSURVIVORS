@@ -1,4 +1,5 @@
 FrameWidgetClass {
+ "Z Order" 1
  {
   OverlayWidgetClass "{54C4A02A556443D7}" {
    Prefab "{54C4A02A556443D7}"

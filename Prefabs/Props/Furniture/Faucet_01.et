@@ -12,7 +12,7 @@ GenericEntity : "{4CC2C69DE1AEF103}Prefabs/Props/Core/DestructibleMultiPhase_Pro
     }
    }
    additionalActions {
-    FM_DrinkWaterPlayerAction "{A1B2C3D4E5F60789}" {
+    ARGH_DrinkWaterPlayerAction "{A1B2C3D4E5F60789}" {
      ParentContextList {
       "Default"
      }
@@ -23,6 +23,9 @@ GenericEntity : "{4CC2C69DE1AEF103}Prefabs/Props/Core/DestructibleMultiPhase_Pro
      m_iWaterValue 0.25
     }
    }
+  }
+  RplComponent "{B5B2C62C7FDD5E1A}" {
+   Enabled 1
   }
  }
 }

@@ -1,30 +1,7 @@
 $grp GenericEntity : "{01AF412EA2C2F7E8}622120A5448725E3/Prefabs/Systems/AmbientPatrolSpawnpoint_CIV_Huge.et" {
  {
-  coords 7380.9 329.805 6534.357
- }
- {
-  coords 4498.42 80.046 3933.25
- }
- {
-  coords 9001.377 112.064 9654.988
-  angles -12.194 1.354 -6.387
- }
- {
-  coords 11419.8 42.192 10952.002
-  angles -11.638 -9.905 15.016
- }
- {
-  coords 6276.536 103.9 4306.129
- }
- {
-  coords 4583.028 40.624 3506.861
- }
- {
   coords 5565.203 121.179 7831.48
   angles -27.692 -7.539 15.897
- }
- {
-  coords 6843.299 100.135 4754.838
  }
  {
   coords 7122.795 120.883 5451.079
@@ -39,30 +16,13 @@ $grp GenericEntity : "{01AF412EA2C2F7E8}622120A5448725E3/Prefabs/Systems/Ambient
   coords 4505.145 439.411 5675.981
  }
  {
-  coords 10739.478 50.354 10569.951
- }
-}
-$grp GenericEntity : "{23122DF6C65EA0BE}622120A5448725E3/Prefabs/Systems/AmbientPatrolSpawnpoint_Horde.et" {
- {
-  coords 6312.915 391.38 6971.207
+  coords 4964.893 253.251 4398.614
  }
  {
-  coords 10630.81 103.987 10192.751
+  coords 5013.848 129.696 3756.116
  }
  {
-  coords 5713.936 456.587 6188.625
- }
- {
-  coords 4916.816 261.793 7177.886
- }
- {
-  coords 3956.598 377.346 6341.527
- }
- {
-  coords 4224.212 228.982 4645.135
- }
- {
-  coords 3563.909 226.748 5717.371
+  coords 6520.114 197.521 4916.391
  }
 }
 $grp GenericEntity : "{3DF27B108A964E1A}622120A5448725E3/Prefabs/Systems/AmbientPatrolSpawnpoint_MIL_USSR_Huge.et" {
@@ -78,6 +38,10 @@ $grp GenericEntity : "{3DF27B108A964E1A}622120A5448725E3/Prefabs/Systems/Ambient
   coords 8490.665 114.49 9553.858
   scale 1.07
  }
+}
+SCR_IndestructibleEnvironmentalEntity : "{3F68EE5DCB004B10}Prefabs/Rocks/Granite/GraniteCliff_01.et" {
+ coords 8789.904 -0.959 10433.734
+ angles -86.567 -67.409 -78.357
 }
 $grp GenericEntity : "{56FFF0C990358ED2}Prefabs/Props/Wrecks/UAZ452_wreck/UAZ452_wreck_static.et" {
  {
@@ -114,9 +78,6 @@ $grp GenericEntity : "{79FE7119DD4DEB12}622120A5448725E3/Prefabs/Systems/Ambient
   coords 4190.473 402.244 5981.261
  }
  {
-  coords 8014.766 33.261 5953.101
- }
- {
   coords 2456.487 19.965 5591.164
   angles -3.555 0.278 -4.476
   scale 4.066
@@ -131,12 +92,6 @@ $grp GenericEntity : "{79FE7119DD4DEB12}622120A5448725E3/Prefabs/Systems/Ambient
  }
  {
   coords 5413.118 63.969 3342.091
- }
- {
-  coords 5408.075 64.313 3411.168
- }
- {
-  coords 5330.065 65.405 3370.952
  }
 }
 $grp GenericEntity : "{84CBCE9163176B3E}Prefabs/Props/Wrecks/S105_wreck/S105_wreck.et" {
@@ -168,8 +123,22 @@ GenericEntity Minigun_66EAD093E04430A6 : "{86EA7714378F6D75}Prefabs/Weapons/Mach
  coords 5058.541 698.878 6332.912
  angles -9.321 -104.789 87.701
 }
-GenericEntity : "{A6340D063CD1630A}622120A5448725E3/Prefabs/Systems/AmbientPatrolSpawnpoint_CIV_Large.et" {
- coords 3838.046 3.476 3689.308
+$grp GenericEntity : "{A6340D063CD1630A}622120A5448725E3/Prefabs/Systems/AmbientPatrolSpawnpoint_CIV_Large.et" {
+ {
+  coords 3838.046 3.476 3689.308
+ }
+ {
+  coords 5711.907 455.836 6193.72
+ }
+ {
+  coords 4918.705 262.842 7174.396
+ }
+ {
+  coords 6271.092 299.978 7148.041
+ }
+ {
+  coords 10678.843 55.921 10589.377
+ }
 }
 SCR_LoadoutManager : "{B54D08AEA74A5354}Prefabs/MP/Managers/Loadouts/LoadoutManager_Editor.et" {
  coords 0 0 0
@@ -215,13 +184,10 @@ $grp GenericEntity : "{D7CBF3DD3D61F086}622120A5448725E3/Prefabs/Systems/Ambient
   coords 10787.241 92.721 10026.854
  }
  {
-  coords 2765.275 110.906 7448.861
- }
- {
   coords 7853.053 174.507 6632.672
  }
  {
-  coords 2765.275 112.089 7448.861
+  coords 2811.547 121.802 7571.899
  }
 }
 $grp GenericEntity : "{DF5EE816FBAE02A7}622120A5448725E3/Prefabs/Systems/AmbientPatrolSpawnpoint_CIV_Medium.et" {
@@ -249,7 +215,7 @@ $grp GenericEntity : "{DF5EE816FBAE02A7}622120A5448725E3/Prefabs/Systems/Ambient
   coords 6506.129 107.949 7919.149
  }
  {
-  coords 8746.621 8.59 7386.662
+  coords 8754.226 4.894 7189.402
  }
  {
   coords 7864.78 169.679 8803.135
@@ -267,14 +233,26 @@ $grp GenericEntity : "{DF5EE816FBAE02A7}622120A5448725E3/Prefabs/Systems/Ambient
  {
   coords 6046.21 104.558 7830.835
  }
+ {
+  coords 10629.854 103.939 10192.567
+ }
+ {
+  coords 3565.669 226.807 5717.597
+ }
+ {
+  coords 4225.183 229.331 4645.568
+ }
+ {
+  coords 3956.883 377.405 6341.507
+ }
+ {
+  coords 8898.78 101.626 9622.719
+ }
+ {
+  coords 7346.449 340.41 6547.666
+ }
 }
 $grp GenericEntity : "{E06C54D194E36C18}622120A5448725E3/Prefabs/Systems/AmbientPatrolSpawnpoint_MIL_USSR_Medium.et" {
- {
-  coords 11800 0 5200
- }
- {
-  coords 9619.879 11.788 8675.36
- }
  {
   coords 4000 261.532 7000
  }
@@ -283,6 +261,9 @@ $grp GenericEntity : "{E06C54D194E36C18}622120A5448725E3/Prefabs/Systems/Ambient
  }
  {
   coords 5612.902 430.347 6699.536
+ }
+ {
+  coords 9517.684 19.124 8688.459
  }
 }
 $grp GenericEntity : "{EB084C400AABD1D3}Prefabs/Props/Wrecks/M151A2_wreck/M151A2_wreck.et" {
@@ -293,10 +274,12 @@ $grp GenericEntity : "{EB084C400AABD1D3}Prefabs/Props/Wrecks/M151A2_wreck/M151A2
   coords 3083.209 27 4922.997
  }
 }
+SCR_MapMarkerDotCircle : "{EC95FBEA75AE409B}Prefabs/Markers/MapMarkerDotCircle.et" {
+ coords 12047.657 2.214 10515.953
+ m_fRadius 50
+ m_DotColor 1 0.294 0 1
+}
 $grp GenericEntity : "{FBE3EE3ACA3DB9D6}622120A5448725E3/Prefabs/Systems/AmbientPatrolSpawnpoint_CIV_Small.et" {
- {
-  coords 8504.32 15.783 6649.032
- }
  {
   coords 6400 11.063 2500
  }
@@ -311,9 +294,6 @@ $grp GenericEntity : "{FBE3EE3ACA3DB9D6}622120A5448725E3/Prefabs/Systems/Ambient
  }
  {
   coords 7800 193.781 7200
- }
- {
-  coords 11800 0 6000
  }
  {
   coords 9801.227 85.488 10431.289
@@ -348,23 +328,14 @@ $grp GenericEntity : "{FBE3EE3ACA3DB9D6}622120A5448725E3/Prefabs/Systems/Ambient
  {
   coords 5970.344 8.413 3089.181
  }
-}
-RoadGeneratorEntity : "{FDC788217C6CCF3F}Prefabs/WEGenerators/Decals/Runway/RG_DrainChannel_02.et" {
- coords 2798.65 24.219 5090.271
  {
-  RoadEntity {
-   ID "5670B641E4788951"
-   SplinePoints {
-    ShapePoint "{5670B641F5E0ED0C}" {
-     Position -1.516 0 -0.072
-    }
-    ShapePoint "{5670B641F5E0EC59}" {
-     Position 95.173 0 -128.998
-    }
-   }
-   IsClosedSpline 0
-   Width 1
-  }
+  coords 8470.495 20.215 6843.653
+ }
+ {
+  coords 8052.179 45.4 6072.903
+ }
+ {
+  coords 6396.704 122.126 4472.221
  }
 }
 SCR_IndestructibleEnvironmentalEntity : "{FF676E917668C455}Prefabs/Rocks/Granite/Granite_ForestStone_01.et" {

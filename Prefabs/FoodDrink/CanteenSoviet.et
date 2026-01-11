@@ -3,8 +3,6 @@ GenericEntity {
  components {
   DL_LootSpawnComponent "{68467C8D27C5C165}" {
   }
-  InventoryItemComponent "{670A032BC7BD1C7A}" {
-  }
  }
  coords 55.862 1 93.503
 }

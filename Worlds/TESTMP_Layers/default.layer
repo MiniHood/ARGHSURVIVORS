@@ -1,0 +1,59 @@
+GenericEntity : "{04C89651279065BF}Prefabs/Systems/AmbientVehicles/AmbientVehicleSpawnpoint_Garage.et" {
+ editor EntityEditorProps "{68561075163B5846}" {
+  Color 0.2333 1 0 1
+ }
+ coords 146.397 1 163.61
+}
+GenericEntity : "{4CC2C69DE1AEF103}Prefabs/Props/Core/DestructibleMultiPhase_Props_Base.et" {
+ coords 147.474 6.64 144.04
+}
+$grp GenericEntity : "{C3F15A9E8B4D2C11}Prefabs/Systems/AmbientVehicles/AmbientFlyingVehicleSpawnpoint_Base.et" {
+ {
+  coords 156.138 1 171.276
+  angles 0 0 0
+ }
+ {
+  coords 142.154 1 171.276
+  angles 0 0 0
+ }
+ {
+  coords 112.095 1 171.276
+  angles 0 0 0
+ }
+ {
+  coords 91.736 1 171.276
+  angles 0 0 0
+ }
+ {
+  coords 142.154 1 198.629
+  angles 0 0 0
+ }
+ {
+  coords 156.138 1 198.629
+  angles 0 0 0
+ }
+ {
+  coords 91.736 1 198.629
+  angles 0 0 0
+ }
+ {
+  coords 112.095 1 198.629
+  angles 0 0 0
+ }
+ {
+  coords 142.154 1 232.805
+  angles 0 0 0
+ }
+ {
+  coords 156.138 1 232.805
+  angles 0 0 0
+ }
+ {
+  coords 91.736 1 232.805
+  angles 0 0 0
+ }
+ {
+  coords 112.095 1 232.805
+  angles 0 0 0
+ }
+}

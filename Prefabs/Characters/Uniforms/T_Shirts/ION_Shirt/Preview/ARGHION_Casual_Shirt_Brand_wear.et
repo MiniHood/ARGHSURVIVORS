@@ -6,7 +6,7 @@ GenericEntity {
    Materials {
     MaterialAssignClass "{67036D0CB6BEAD57}" {
      SourceMaterial "rhs_ion_casual_shirt"
-     AssignedMaterial "{59963428618B9891}Assets/Characters/Uniforms/T_Shirts/Shirt_ION/Data/rhs_ion_casual_shirt_brand.emat"
+     AssignedMaterial "{098E873E5E472BE6}Assets/Characters/Uniforms/T_Shirts/Shirt_ION/Data/rhs_ion_casual_shirt_brand.emat"
     }
    }
   }

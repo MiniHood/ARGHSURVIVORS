@@ -87,4 +87,114 @@ $grp StaticModelEntity : "{DEFAB7E592F00F0A}Prefabs/Systems/FastTravel/TP_Action
   angles 0 167.688 0
   scale 2.82
  }
+ {
+  components {
+   MeshObject "{56ACD1C4DC78C87B}" {
+    Object ""
+   }
+   ActionsManagerComponent "{66E2552C476F85D3}" {
+    additionalActions {
+     FastTravelRandomAction "{66E2552C476F85CC}" {
+      UIInfo UIInfo "{66E2552C476F85C0}" {
+       Name "Bunker (Safe Zone)"
+      }
+      m_FastTravel_Destinations {
+       "BUNKERARRIVAL"
+      }
+     }
+    }
+   }
+  }
+  coords 8281.533 1.644 6725.255
+  angles 0 -112.466 0
+  scale 2.63
+ }
+ {
+  components {
+   MeshObject "{56ACD1C4DC78C87B}" {
+    Object ""
+   }
+   ActionsManagerComponent "{66E2552C476F85D3}" {
+    additionalActions {
+     FastTravelRandomAction "{66E2552C476F85CC}" {
+      UIInfo UIInfo "{66E2552C476F85C0}" {
+       Name "Bunker (Safe Zone)"
+      }
+      m_FastTravel_Destinations {
+       "BUNKERARRIVAL"
+      }
+     }
+    }
+   }
+  }
+  coords 11424.537 1.7 10588.134
+  angles 0 136.122 0
+  scale 2.75
+ }
+ {
+  components {
+   MeshObject "{56ACD1C4DC78C87B}" {
+    Object ""
+   }
+   ActionsManagerComponent "{66E2552C476F85D3}" {
+    additionalActions {
+     FastTravelRandomAction "{66E2552C476F85CC}" {
+      UIInfo UIInfo "{66E2552C476F85C0}" {
+       Name "Bunker (Safe Zone)"
+      }
+      m_FastTravel_Destinations {
+       "BUNKERARRIVAL"
+      }
+     }
+    }
+   }
+  }
+  coords 9542.554 2.412 9933.607
+  angles 0 -13.703 0
+  scale 2.42
+ }
+ {
+  components {
+   MeshObject "{56ACD1C4DC78C87B}" {
+    Object ""
+   }
+   ActionsManagerComponent "{66E2552C476F85D3}" {
+    additionalActions {
+     FastTravelRandomAction "{66E2552C476F85CC}" {
+      UIInfo UIInfo "{66E2552C476F85C0}" {
+       Name "Bunker (Safe Zone)"
+      }
+      m_FastTravel_Destinations {
+       "BUNKERARRIVAL"
+      }
+     }
+    }
+   }
+  }
+  coords 7747.197 1.202 8055.851
+  angles 0 25.466 0
+  scale 2.7
+ }
+ {
+  components {
+   MeshObject "{56ACD1C4DC78C87B}" {
+    Object ""
+   }
+   ActionsManagerComponent "{66E2552C476F85D3}" {
+    additionalActions {
+     FastTravelRandomAction "{66E2552C476F85CC}" {
+      UIInfo UIInfo "{66E2552C476F85C0}" {
+       Name "Bunker (Safe Zone)"
+      }
+      m_FastTravel_Destinations {
+       "BUNKERARRIVAL"
+      }
+     }
+    }
+   }
+  }
+  coords 6728.198 1.072 6891.041
+  angles 0 138.016 0
+  scale 2.69
+ }
 }

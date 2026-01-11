@@ -94,8 +94,8 @@ $grp GenericEntity {
     Object "{EF8784276350998F}Assets/Weapons/Rifles/MK47/MK47_MUTANT.xob"
    }
   }
-  coords 517.908 7.637 12304.174
-  angles 0 0 90
+  coords 518.731 7.637 12304.278
+  angles 0 -6.201 90
  }
  {
   components {
@@ -103,8 +103,8 @@ $grp GenericEntity {
     Object "{A37560C58AD91123}Assets/Weapons/Attachments/Barrels/MK47_Long_Barrel.xob"
    }
   }
-  coords 518.013 7.6 12304.004
-  angles 0 -90 -75
+  coords 518.853 7.6 12304.121
+  angles 0 -96.201 -75
  }
  {
   components {
@@ -112,8 +112,8 @@ $grp GenericEntity {
     Object "{243532BB03AB2B27}Assets/Weapons/Attachments/Magazines/MK47_mutant_60mag.xob"
    }
   }
-  coords 517.779 7.623 12304.131
-  angles 0 90 90
+  coords 518.607 7.623 12304.222
+  angles 0 83.799 90
  }
  {
   components {
@@ -121,8 +121,8 @@ $grp GenericEntity {
     Object "{EA85265618CBF035}Assets/Weapons/Rifles/Benelli_M4/BenelliM4.xob"
    }
   }
-  coords 517.755 7.434 12304.651
-  angles 0 -90 -76.563
+  coords 518.527 7.434 12304.736
+  angles 0 -96.201 -76.563
  }
  {
   components {
@@ -148,8 +148,8 @@ $grp GenericEntity {
     Object "{CAADC1D24FB3CDD9}Assets/Weapons/MachineGuns/MiniGun/MiniGun.xob"
    }
   }
-  coords 517.207 7.794 12304.039
-  angles 8.339 51.131 0
+  coords 518.048 7.794 12304.068
+  angles 8.339 44.93 0
  }
  {
   components {
@@ -248,7 +248,7 @@ $grp GenericEntity {
  {
   components {
    MeshObject "{673ED1D579833434}" {
-    Object "{042B93598F44BCB3}Assets/Props/Barber/Cut_station/wbread-cutstation.xob"
+    Object "{042B93598F44BCB3}Cut from mod - barber/assets/Barber/Cut_station/wbread-cutstation.xob"
    }
    RigidBody "{6842D4080E72201C}" {
    }
@@ -260,7 +260,7 @@ $grp GenericEntity {
  {
   components {
    MeshObject "{673ED1D56866EA76}" {
-    Object "{9D4AFE1CF76ED4EE}Assets/Props/Barber/HairDryer/wbready-hairdryer.xob"
+    Object "{9D4AFE1CF76ED4EE}Cut from mod - barber/assets/Barber/HairDryer/wbready-hairdryer.xob"
    }
   }
   coords 490.849 8.205 12300.692
@@ -270,7 +270,7 @@ $grp GenericEntity {
  {
   components {
    MeshObject "{673ED1D548363A18}" {
-    Object "{3AD573648DA3DBCB}Assets/Props/Barber/CutThroat/wbready-cutthroat.xob"
+    Object "{3AD573648DA3DBCB}Cut from mod - barber/assets/Barber/CutThroat/wbready-cutthroat.xob"
    }
   }
   coords 490.394 8.152 12300.761
@@ -1326,6 +1326,18 @@ $grp SCR_DestructibleBuildingEntity : "{0C967CB96A602ECD}Prefabs/Structures/Infr
   angles 0 78.702 0
  }
 }
+$grp SCR_IndestructibleEnvironmentalEntity : "{0E9A4FF62219106F}Prefabs/Rocks/Granite/GraniteCliff_03_Fucus.et" {
+ {
+  coords 509.923 9.988 12288.001
+  angles 76.166 160.111 51.232
+  scale 0.575
+ }
+ {
+  coords 521.931 -5.284 12372.083
+  angles 76.166 -125.227 51.232
+  scale 0.81
+ }
+}
 GenericEntity : "{12F20BC17D5FA437}Prefabs/ARGH/SPAWNAREA/spawn1.et" {
  coords 526.079 3.045 12352.824
  angles 0 -97.308 0
@@ -1388,6 +1400,16 @@ SCR_ChimeraCharacter : "{1C817825BB33CE32}Prefabs/Characters/DE_Examples/DE_Trad
 SCR_DestructibleBuildingEntity : "{1EB7F56F2D294872}Prefabs/Structures/Infrastructure/Naval/Sheds/BoatShed_01/BoatShed_01_weathered.et" {
  coords 492.584 190.408 12291.367
  angles 0 88.395 0
+ {
+  GenericEntity {
+   ID "59B86300E7A46E4A"
+   components {
+    ActionsManagerComponent "{F32B667C3C823800}" {
+     Enabled 0
+    }
+   }
+  }
+ }
 }
 $grp GenericEntity : "{2365CF3E9B7444E9}Prefabs/ARGH/Signs/ATMRIGHT.et" {
  {
@@ -1445,15 +1467,6 @@ GenericEntity : "{37FD663A110F1375}Prefabs/Structures/Infrastructure/Naval/Piers
  coords 498.316 2.696 12336.576
  angles 0 -162.107 0
 }
-$grp SCR_DestructibleBuildingEntity : "{3961F81016AAE7CD}Prefabs/Structures/Infrastructure/Naval/Sheds/PierShed_01/PierShed_01.et" {
- {
-  coords 517.574 189.881 12300.08
-  angles 0 -10.911 0
- }
- {
-  coords 502.32 190.867 12294.531
- }
-}
 $grp GenericEntity : "{3BAF6AA8C20D924E}Prefabs/Compositions/Misc/SubCompositions/Fortifications/Barricade_Logs_01.et" {
  {
   coords 457.245 1.128 12426.133
@@ -1475,6 +1488,20 @@ $grp GenericEntity : "{3F6B9C6E835A3D75}Prefabs/Compositions/Misc/SubComposition
  {
   coords 481.356 3.345 12359.804
   angles 0 -58.555 0
+ }
+}
+SCR_DestructibleBuildingEntity : "{40AD45E03ADED2B8}Prefabs/Structures/Infrastructure/Naval/Sheds/PierShed_01/PierShed_01nodoors.et" {
+ coords 517.574 189.881 12300.08
+ angles 0 -10.911 0
+ {
+  GenericEntity {
+   ID "68497080036E6499"
+   components {
+    ActionsManagerComponent "{F32B667C3C823800}" {
+     Enabled 0
+    }
+   }
+  }
  }
 }
 SCR_DestructibleBuildingEntity : "{4256CFD677701B03}Prefabs/Structures/Infrastructure/Naval/Piers/Pier_04.et" {
@@ -1517,44 +1544,24 @@ $grp GenericEntity : "{47F8D83F71EB2B74}Prefabs/Structures/Infrastructure/Lamps/
 }
 $grp SCR_IndestructibleEnvironmentalEntity : "{5108922392AE7139}PrefabsEditable/Auto/Rocks/Granite/E_GraniteCliff_01.et" {
  {
-  coords 507.844 -0.341 12384.572
-  angles 82.525 66.419 81.363
-  scale 0.587
- }
- {
-  coords 510.06 11.119 12294.083
-  angles 82.525 167.481 81.363
-  scale 0.587
- }
- {
   coords 523.627 -5.51 12415.904
   angles -17.703 17.564 -6.507
   scale 1.111
  }
  {
+  components {
+   SCR_EditableEntityComponent "{58910CB42762D472}" {
+    m_Flags 896
+   }
+  }
   coords 519.506 13.457 12421.482
   angles 69.8 26.788 110.881
   scale 0.698
  }
  {
-  coords 517.515 5.664 12309.401
-  angles -53.713 161.778 -172.112
-  scale 0.403
- }
- {
-  coords 518.923 4.719 12312.163
-  angles -53.713 161.778 -172.112
-  scale 0.157
- }
- {
-  coords 515.065 4.11 12310.373
-  angles 24.256 -79.44 130.015
-  scale 0.248
- }
- {
-  coords 516.155 -0.215 12360.134
-  angles -82.512 -38.791 139.342
-  scale 0.616
+  coords 521.249 -1.223 12351.438
+  angles -90 -180 -180
+  scale 0.762
  }
 }
 $grp SCR_DestructibleEntity : "{510AAC7765BE2F0B}Prefabs/Structures/Walls/Wooden/WoodenFence_04/WoodenFence_04_4m_Pole.et" {
@@ -1615,7 +1622,7 @@ $grp SCR_DestructibleBuildingEntity : "{5535BC6973669868}Prefabs/Structures/Infr
   angles 0 -100.848 0
  }
  {
-  coords 11425.858 1.416 10588.43
+  coords 11425.858 0.616 10588.43
   angles 0 144.397 0
  }
  {
@@ -1623,11 +1630,11 @@ $grp SCR_DestructibleBuildingEntity : "{5535BC6973669868}Prefabs/Structures/Infr
   angles 0 -10.493 0
  }
  {
-  coords 7746.663 0.934 8057.127
+  coords 7746.663 0.63 8057.127
   angles 0 43.031 0
  }
  {
-  coords 6729.624 1.31 6891.308
+  coords 6729.624 0.541 6891.308
   angles 0 144.397 0
  }
 }
@@ -1637,8 +1644,14 @@ StaticModelEntity : "{5B65BDE2BBC3F2F8}PrefabLibrary/DefaultLibrary/Props/Constr
  scale 1.559
 }
 GenericEntity : "{5F76887813B86AD4}Prefabs/Props/Military/AmmoBoxes/EquipmentBoxStack/USSR/EquipmentBoxStack_USSR_01_V6_covered.et" {
- coords 517.684 7.027 12304.318
- angles 0 179.449 0
+ coords 518.492 7.027 12304.397
+ angles 0 173.248 0
+ {
+  GenericEntity {
+   ID "56E09476C0EC798D"
+   coords 0 0 0
+  }
+ }
 }
 $grp GenericEntity : "{613F68B39D0A4A64}Prefabs/Props/Commercial/CoolingBoxShop_01.et" {
  {
@@ -1662,8 +1675,8 @@ $grp GenericEntity : "{613F68B39D0A4A64}Prefabs/Props/Commercial/CoolingBoxShop_
 }
 $grp GenericEntity : "{63817E1BF0792476}Prefabs/ARGH/Signs/WELCOME.et" {
  {
-  coords 509.461 -3.45 12379.223
-  angles 0 -99.939 0
+  coords 525.938 -5.164 12379.523
+  angles 0 -87.81 0
   scale 5.244
  }
  {
@@ -2262,6 +2275,26 @@ $grp LightEntity : "{A45B8995A66B9146}Prefabs/Structures/BuildingParts/Lights/Li
   NearPlane 0.9
   Dynamic 1
  }
+ {
+  coords 525.587 0.59 12384.045
+  angles -88.713 -180 -180
+  Color 0.6529 0.2747 0.076 1
+  LV 8.43
+  Type Point
+  Radius 44
+  NearPlane 0.9
+  Dynamic 1
+ }
+ {
+  coords 524.612 0.875 12374.963
+  angles -88.713 -180 -180
+  Color 0.6529 0.2747 0.076 1
+  LV 8.43
+  Type Point
+  Radius 44
+  NearPlane 0.9
+  Dynamic 1
+ }
 }
 $grp SCR_IndestructibleEnvironmentalEntity : "{A7606C7E96A39B5D}Prefabs/Rocks/Granite/Granite_Boulder_02_V2.et" {
  {
@@ -2307,7 +2340,6 @@ $grp SCR_IndestructibleEnvironmentalEntity : "{A7606C7E96A39B5D}Prefabs/Rocks/Gr
  {
   coords 520.906 186.113 12308.266
   angles -23.034 -75.623 -121.315
-  scale 1.9
  }
  {
   coords 523.789 185.748 12303.633
@@ -2318,6 +2350,31 @@ $grp SCR_IndestructibleEnvironmentalEntity : "{A7606C7E96A39B5D}Prefabs/Rocks/Gr
   coords 487.744 184.203 12328.924
   angles 19.096 127.723 -95.669
   scale 1.9
+ }
+ {
+  coords 518.848 186.777 12310.466
+  angles -20.877 80.977 54.228
+  scale 1.45
+ }
+ {
+  coords 518.455 184.971 12312.653
+  angles -20.877 80.977 54.228
+  scale 1.45
+ }
+ {
+  coords 514.117 184.824 12312.653
+  angles -20.877 80.977 54.228
+  scale 1.45
+ }
+ {
+  coords 514.595 187.079 12309.803
+  angles -22.242 85.536 41.864
+  scale 1.45
+ }
+ {
+  coords 514.623 182.392 12317.392
+  angles -32.424 84.634 165.06
+  scale 2.799
  }
 }
 GenericEntity : "{A8E6670E3AC51126}Prefabs/Props/Industrial/CrawlerCraneWreck_01/CrawlerCraneWreck_01_yellow.et" {
@@ -2344,6 +2401,9 @@ $grp SCR_DestructibleEntity : "{AAA1E8B3722E8BE3}Prefabs/Structures/Infrastructu
   scale 0.51
  }
 }
+SCR_DestructibleBuildingEntity : "{AAB6D9EA8C84ED64}Prefabs/Structures/Infrastructure/Naval/Sheds/PierShed_01/PierShed_01lockedoors.et" {
+ coords 502.32 190.867 12294.531
+}
 $grp GenericEntity : "{AC98FF880BD0F2C2}Prefabs/Props/Furniture/Chair_01/Chair_01_base.et" {
  {
   coords 492.554 7.081 12302.674
@@ -2369,9 +2429,6 @@ $grp GenericEntity : "{AC98FF880BD0F2C2}Prefabs/Props/Furniture/Chair_01/Chair_0
  {
   coords 495.845 7.049 12306.436
   angles 0 96.592 0
- }
- {
-  coords 498.761 7.049 12301.45
  }
  {
   coords 494.749 7.049 12305.718
@@ -2462,13 +2519,11 @@ $grp SCR_ChimeraCharacter : "{B39C4B8E0885A29A}Prefabs/Characters/DE_Examples/DE
   angles 0 86.566 0
   scale 0.997
  }
- {
+ HardwareTrader {
   components {
-   SignalsManagerComponent "{520EA1D2F659C85A}" {
-    Enabled 1
-   }
    DE_TraderComponent "{66F68382BBCE97CA}" {
-    traderName "Storage/Building Supples"
+    traderName "Hrdware Trader"
+    modes DEFAULT
     itemWhitelist {
      "{173AB5EB5EF99F21}Prefabs/Props/Civilian/StorageBoxPlans.et"
      "{D125E11C31A965AA}Prefabs/BaseBuilding/Storage/Safe/SafeBook.et"
@@ -2483,21 +2538,31 @@ $grp SCR_ChimeraCharacter : "{B39C4B8E0885A29A}Prefabs/Characters/DE_Examples/DE
    BaseLoadoutManagerComponent "{520EA1D2DB11821E}" {
     Slots {
      LoadoutSlotInfo Hat {
-      Prefab "{0806C36951B3C052}Prefabs/Characters/HeadGear/Hat_BallCap/Hat_ballcap_TAN_backwards.et"
+      Prefab "{7429DFF39CEF10BD}Prefabs/Characters/HeadGear/Hat_BallCap/Hat_ballcap_ATACS.et"
      }
      LoadoutSlotInfo Jacket {
-      Prefab "{690819A92A3A8D14}Prefabs/Characters/Uniforms/Jacket_Raincoat_01/Jacket_Raincoat_01_orange.et"
+      Prefab "{52D2EEBAD7B55681}Prefabs/Uniforms/Tops/Tshirt/Tshirt_TrapstarBlack.et"
+     }
+    }
+   }
+   ActionsManagerComponent "{520EA1D2F659CE02}" {
+    ActionContexts {
+     UserActionContext "{520EA1D2F659CE17}" {
+      Radius 1
+     }
+     UserActionContext "{5A26F8E7B44B5FB6}" {
+      Radius 1.25
      }
     }
    }
   }
-  coords 490.253 7.389 12289.15
-  angles 0 40.797 0
+  coords 490.834 7.385 12290.935
+  angles 0 85.427 0
   scale 0.997
  }
 }
 GenericEntity : "{B3BCE4B6920ED5C0}Prefabs/Structures/Signs/Military/Sign_AmmoStorage_US_01.et" {
- coords 517.733 7.027 12303.365
+ coords 516.847 7.027 12302.764
  angles 0 -11.905 0
 }
 SCR_DestructibleBuildingEntity : "{B5CAF8C900DBCF61}Prefabs/Structures/Industrial/Cranes/GantryCrane_01/GantryCrane_E_01_winch.et" {
@@ -2574,39 +2639,24 @@ $grp GenericEntity : "{B6C340C78D5D5338}Prefabs/Structures/BuildingParts/Doors/D
     AutoTransform 1
    }
   }
-  coords 518.036 7.791 12304.784
-  angles 88.634 -180 -80.529
-  scale 0.54
- }
- {
-  components {
-   ActionsManagerComponent "{F32B667C3C823800}" {
-    Enabled 0
-   }
-   Hierarchy "{7642683606C70747}" {
-    Enabled 1
-    PivotID "Socket_door_right_02"
-    AutoTransform 1
-   }
-  }
   coords 496.209 7.4 12288.524
   angles 89.911 179.632 0.621
   scale 2.169
- }
- {
-  components {
-   ActionsManagerComponent "{F32B667C3C823800}" {
-    Enabled 0
-   }
-   Hierarchy "{7642683606C70747}" {
-    Enabled 1
-    PivotID "Socket_door_right_02"
-    AutoTransform 1
+  {
+   GenericEntity : "{B6C340C78D5D5338}Prefabs/Structures/BuildingParts/Doors/Door_PierShed_01_A_RIGHT_EXT_COV_B.et" {
+    components {
+     ActionsManagerComponent "{F32B667C3C823800}" {
+      Enabled 0
+     }
+     Hierarchy "{7642683606C70747}" {
+      Enabled 1
+      PivotID "Socket_door_right_02"
+      AutoTransform 1
+     }
+    }
+    coords 1.686 0.033 -0.021
    }
   }
-  coords 492.551 7.354 12288.531
-  angles 89.911 179.632 0.621
-  scale 2.169
  }
 }
 $grp GenericEntity : "{BAB1151298AA3917}Prefabs/Props/Industrial/BenchIndustrial_01/BenchIndustrial_01.et" {
@@ -2620,6 +2670,11 @@ $grp GenericEntity : "{BAB1151298AA3917}Prefabs/Props/Industrial/BenchIndustrial
  }
 }
 GenericEntity : "{BCE07A58672955B9}Prefabs/Props/Civilian/Bucket_01.et" {
+ components {
+  DL_LootSpawnComponent "{66B442257E6A201D}" {
+   Enabled 0
+  }
+ }
  coords 488.223 2.365 12309.1
 }
 $grp SCR_DestructibleEntity : "{C0760C6F3B2EB37A}Prefabs/ARGH/Signs/AFRAMESIGN_BASE.et" {
@@ -2962,132 +3017,10 @@ $grp GenericEntity : "{DE31BAA70E260BE9}Prefabs/Props/Military/MilitaryCrates/Cr
   angles 0 -8.916 0
  }
 }
-$grp StaticModelEntity : "{DEFAB7E592F00F0A}Prefabs/Systems/FastTravel/TP_Action.et" {
- {
-  components {
-   MeshObject "{56ACD1C4DC78C87B}" {
-    Object ""
-   }
-   ActionsManagerComponent "{66E2552C476F85D3}" {
-    additionalActions {
-     FastTravelRandomAction "{66E2552C476F85CC}" {
-      UIInfo UIInfo "{66E2552C476F85C0}" {
-       Name "Bunker (Safe Zone)"
-      }
-      m_FastTravel_Destinations {
-       "BUNKERARRIVAL"
-      }
-     }
-    }
-   }
-  }
-  coords 8281.533 1.644 6725.255
-  angles 0 -112.466 0
-  scale 2.63
- }
- {
-  components {
-   MeshObject "{56ACD1C4DC78C87B}" {
-    Object ""
-   }
-   ActionsManagerComponent "{66E2552C476F85D3}" {
-    additionalActions {
-     FastTravelRandomAction "{66E2552C476F85CC}" {
-      UIInfo UIInfo "{66E2552C476F85C0}" {
-       Name "Bunker (Safe Zpme)"
-      }
-      m_FastTravel_Destinations {
-       "BUNKERARRIVAL"
-      }
-     }
-    }
-   }
-  }
-  coords 11424.537 2.045 10588.134
-  angles 0 136.122 0
-  scale 2.75
- }
- {
-  components {
-   MeshObject "{56ACD1C4DC78C87B}" {
-    Object ""
-   }
-   ActionsManagerComponent "{66E2552C476F85D3}" {
-    additionalActions {
-     FastTravelRandomAction "{66E2552C476F85CC}" {
-      UIInfo UIInfo "{66E2552C476F85C0}" {
-       Name "Bunker (Safe Zone)"
-      }
-      m_FastTravel_Destinations {
-       "BUNKERARRIVAL"
-      }
-     }
-    }
-   }
-  }
-  coords 9542.554 2.412 9933.607
-  angles 0 -13.703 0
-  scale 2.42
- }
- {
-  components {
-   MeshObject "{56ACD1C4DC78C87B}" {
-    Object ""
-   }
-   ActionsManagerComponent "{66E2552C476F85D3}" {
-    additionalActions {
-     FastTravelRandomAction "{66E2552C476F85CC}" {
-      UIInfo UIInfo "{66E2552C476F85C0}" {
-       Name "Bunker (Safe Zone)"
-      }
-      m_FastTravel_Destinations {
-       "BUNKERARRIVAL"
-      }
-     }
-    }
-   }
-  }
-  coords 7747.197 1.517 8055.851
-  angles 0 25.466 0
-  scale 2.7
- }
- {
-  components {
-   MeshObject "{56ACD1C4DC78C87B}" {
-    Object ""
-   }
-   ActionsManagerComponent "{66E2552C476F85D3}" {
-    additionalActions {
-     FastTravelRandomAction "{66E2552C476F85CC}" {
-      UIInfo UIInfo "{66E2552C476F85C0}" {
-       Name "Bunker (Safe Zone)"
-      }
-      m_FastTravel_Destinations {
-       "BUNKERARRIVAL"
-      }
-     }
-    }
-   }
-  }
-  coords 6728.198 1.829 6891.041
-  angles 0 138.016 0
-  scale 2.69
- }
-}
 SCR_IndestructibleEnvironmentalEntity : "{E11E11B30E54F329}Prefabs/ARGH/Caves/ARGHCave_Maze2.et" {
  coords 582.65 5.671 12343.139
  angles 0 0 0
  scale 7.968
-}
-GenericEntity : "{E641FDA9C7D9AA72}Prefabs/Props/Construction/WoodHolder_01.et" {
- components {
-  DL_LootSpawnComponent "{66B442257E6A201D}" {
-   Enabled 0
-  }
- }
- coords 518.684 7.795 12305.402
- angles -0.439 170.43 180
- scale 0.79
 }
 $grp GenericEntity : "{E660DE914A7211EB}Prefabs/Compositions/Slotted/SlotRoadSmall/Checkpoint_S_US_01.et" {
  {
@@ -3487,13 +3420,14 @@ $grp SCR_ChimeraCharacter : "{F3400FAF5F2CA34C}Prefabs/MercOut/MO_Trader_BlackMa
   coords 503.412 7.013 12311.984
   angles 0 164.694 0
  }
- {
+ WeaponsDealer {
   components {
    DE_TraderComponent "{66F68382BBCE97CA}" {
     traderName "Weapons Dealer"
     cardPayment 1
     traderMargin 0.5
-    types 294
+    types 262462
+    modes 14
    }
    BaseLoadoutManagerComponent "{520EA1D2DB11821E}" {
     Slots {
@@ -3514,21 +3448,21 @@ $grp SCR_ChimeraCharacter : "{F3400FAF5F2CA34C}Prefabs/MercOut/MO_Trader_BlackMa
     }
    }
   }
-  coords 518.549 7.027 12304.473
-  angles 0 -30.806 0
+  coords 520.336 7.027 12305.06
+  angles 0 -53.738 0
  }
- {
+ ClothingTrader {
   components {
    DE_TraderComponent "{66F68382BBCE97CA}" {
-    traderName "Gear/Equipment Dealer"
+    traderName "Gear and Wearable Dealer"
     cardPayment 1
     traderMargin 0.5
-    types 556224
+    types 556160
    }
    BaseLoadoutManagerComponent "{520EA1D2DB11821E}" {
     Slots {
      LoadoutSlotInfo Hat {
-      Prefab "{FC1EB4AA0136B411}Prefabs/Characters/HeadGear/Hat_Boonie_US_01/GL_Hat_Boonie_WTiger.et"
+      Prefab "{0C5C33A79F921FE9}Prefabs/Characters/HeadGear/Hat_BallCap/Hat_ballcap_OD_backwards.et"
      }
      LoadoutSlotInfo Back {
       Prefab "{95D4766BBE46F23D}Prefabs/Items/Equipment/Backpacks/Backpack_IIFS_FieldPack.et"
@@ -3546,8 +3480,39 @@ $grp SCR_ChimeraCharacter : "{F3400FAF5F2CA34C}Prefabs/MercOut/MO_Trader_BlackMa
     }
    }
   }
-  coords 514.776 6.929 12302.778
-  angles 0 -26.762 0
+  coords 494.096 7.081 12304.851
+  angles 0 87.974 0
+ }
+ BlackMarketAmmoDealer {
+  components {
+   DE_TraderComponent "{66F68382BBCE97CA}" {
+    traderName "Ammo Dealer"
+    cardPayment 1
+    traderMargin 0.5
+    types 262966
+    modes AMMUNITION
+   }
+   BaseLoadoutManagerComponent "{520EA1D2DB11821E}" {
+    Slots {
+     LoadoutSlotInfo Hat {
+      Prefab "{E12126CDE731EED5}Prefabs/Characters/HeadGear/Hat_Boonie_US_01/Hat_Boonie_US_01.et"
+     }
+     LoadoutSlotInfo ArmoredVest {
+      Prefab "{E9FBA343CD7A6869}Prefabs/Characters/Vests/Vest_TV102/variants/Vest_TV102_rifleman_EMR_3.et"
+     }
+     LoadoutSlotInfo Vest {
+      Prefab "{D0BE9BC05C232757}Prefabs/Characters/WYQ_RandomizedLoadoutManager/WYQ_Randomized_Armored_Vest.et"
+     }
+     LoadoutSlotInfo HandWear {
+      Prefab "{E4C98F783EAB35FF}Prefabs/Characters/Handwear/Gloves_MechanixMpact/GRS_Fingerless_Gloves.et"
+     }
+     LoadoutSlotInfo NVS_NVGSlot {
+     }
+    }
+   }
+  }
+  coords 517.561 7.027 12303.216
+  angles 0 -10.807 0
  }
 }
 GenericEntity : "{F56333F87A4FB433}Prefabs/Props/Commercial/ScaleShop_01/ScaleShop_01_yellow.et" {

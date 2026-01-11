@@ -1,0 +1,5 @@
+GenericEntity : "{C3F15A9E8B4D2C11}Prefabs/Systems/AmbientVehicles/AmbientFlyingVehicleSpawnpoint_Base.et" {
+ ID "6E6F06F2AEDE4D0B"
+ coords 2159.18 12.563 929.612
+ angles 0 22.396 0
+}

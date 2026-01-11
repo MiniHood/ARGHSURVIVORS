@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{16E171565352590C}PrefabsEditable/Auto/Structures/Infrastructure/Waterworks/WellPump_01/E_WellPump_01_green.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

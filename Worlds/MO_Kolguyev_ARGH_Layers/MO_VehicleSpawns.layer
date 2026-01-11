@@ -1,195 +1,60 @@
-$grp GenericEntity : "{644AEC5C537E03F0}Prefabs/Systems/AmbientVehicles/AmbientVehicleSpawnpoint_USSR.et" {
+$grp GenericEntity : "{C3F15A9E8B4D2C11}Prefabs/Systems/AmbientVehicles/AmbientFlyingVehicleSpawnpoint_Base.et" {
  {
-  components {
-   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
-    m_aIncludedEditableEntityLabels {
-     VEHICLE_HELICOPTER
-     TRAIT_ARMED
-    }
-    m_bRequireAllIncludedLabels 1
-   }
-  }
   coords 2636.179 24.219 5517.683
  }
  {
-  components {
-   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
-    m_aIncludedEditableEntityLabels {
-     VEHICLE_HELICOPTER
-     TRAIT_ARMED
-    }
-    m_bRequireAllIncludedLabels 1
-   }
-  }
   coords 2683.247 24.218 5479.958
   angles 0 -89.961 0
  }
  {
-  components {
-   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
-    m_aIncludedEditableEntityLabels {
-     VEHICLE_HELICOPTER
-     TRAIT_ARMED
-    }
-    m_bRequireAllIncludedLabels 1
-   }
-  }
   coords 2928.214 24.22 5164.694
   angles 0 -129.521 0
  }
  {
-  components {
-   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
-    m_aIncludedEditableEntityLabels {
-     VEHICLE_HELICOPTER
-     TRAIT_ARMED
-    }
-    m_bRequireAllIncludedLabels 1
-   }
-  }
   coords 4365.52 55.188 3217.504
   angles 0 98.74 0
  }
  {
-  components {
-   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
-    m_aIncludedEditableEntityLabels {
-     VEHICLE_HELICOPTER
-     TRAIT_ARMED
-    }
-    m_bRequireAllIncludedLabels 1
-   }
-  }
   coords 5304.251 65.188 3404.144
   angles 0 66.342 0
  }
  {
-  components {
-   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
-    m_aIncludedEditableEntityLabels {
-     VEHICLE_HELICOPTER
-     TRAIT_ARMED
-    }
-    m_bRequireAllIncludedLabels 1
-   }
-  }
-  coords 5976 9.312 3116.211
+  coords 5983.407 9.312 3119.984
   angles 0 -107.945 0
  }
  {
-  components {
-   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
-    m_aIncludedEditableEntityLabels {
-     VEHICLE_HELICOPTER
-     TRAIT_ARMED
-    }
-    m_bRequireAllIncludedLabels 1
-   }
-  }
   coords 2078.727 119.25 7387.24
   angles 0 136.195 0
  }
  {
-  components {
-   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
-    m_aIncludedEditableEntityLabels {
-     VEHICLE_HELICOPTER
-     TRAIT_ARMED
-    }
-    m_bRequireAllIncludedLabels 1
-   }
-  }
   coords 2022.378 129.469 7327.841
   angles 0 133.523 0
  }
  {
-  components {
-   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
-    m_aIncludedEditableEntityLabels {
-     VEHICLE_HELICOPTER
-     TRAIT_ARMED
-    }
-    m_bRequireAllIncludedLabels 1
-   }
-  }
   coords 6927.074 435.864 6829.04
   angles 0 15.716 0
  }
  {
-  components {
-   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
-    m_aIncludedEditableEntityLabels {
-     VEHICLE_HELICOPTER
-     TRAIT_ARMED
-    }
-    m_bRequireAllIncludedLabels 1
-   }
-  }
   coords 6747.522 441.812 6806.141
   angles 0 -132.05 0
  }
  {
-  components {
-   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
-    m_aIncludedEditableEntityLabels {
-     VEHICLE_HELICOPTER
-     TRAIT_ARMED
-    }
-    m_bRequireAllIncludedLabels 1
-   }
-  }
   coords 7020.415 427.436 6933.01
   angles 0 -87.324 0
  }
  {
-  components {
-   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
-    m_aIncludedEditableEntityLabels {
-     VEHICLE_HELICOPTER
-     TRAIT_ARMED
-    }
-    m_bRequireAllIncludedLabels 1
-   }
-  }
   coords 6952.007 418 7007.129
   angles 0 -171.985 0
  }
  {
-  components {
-   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
-    m_aIncludedEditableEntityLabels {
-     VEHICLE_HELICOPTER
-     TRAIT_ARMED
-    }
-    m_bRequireAllIncludedLabels 1
-   }
-  }
   coords 6898.694 426.031 6928.407
   angles 0 62.226 0
  }
  {
-  components {
-   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
-    m_aIncludedEditableEntityLabels {
-     VEHICLE_HELICOPTER
-     TRAIT_ARMED
-    }
-    m_bRequireAllIncludedLabels 1
-   }
-  }
   coords 8506.451 95.925 9330.957
   angles 0 113.325 0
  }
  {
-  components {
-   SCR_AmbientVehicleSpawnPointComponent "{5D5E85F932F777FA}" {
-    m_aIncludedEditableEntityLabels {
-     VEHICLE_HELICOPTER
-     TRAIT_ARMED
-    }
-    m_bRequireAllIncludedLabels 1
-   }
-  }
   coords 6371.431 40.028 8030.918
   angles 0 -84.83 0
  }

@@ -1,0 +1,9 @@
+GenericEntity : "{3BA9D94C4EE9B33B}Prefabs/Compositions/Slotted/CompositionBase.et" {
+ ID "5282DCB5DFC8538F"
+ {
+  GenericEntity : "{614D8A633504DAD2}Prefabs/Props/Civilian/ARGHSUITCASE.et" {
+   ID "684AB39D046BEAA7"
+   coords 1.011 11.575 -1.072
+  }
+ }
+}

@@ -103,6 +103,7 @@ FrameWidgetClass {
         TextWidgetClass "{5DFF03E4AD9D1EE5}" {
          Prefab "{5DFF03E4AD9D1EE5}"
          "Is Enabled" 1
+         "Font Size" 44
         }
         TextWidgetClass "{5DFF03E4AD9D1EDB}" {
          Prefab "{5DFF03E4AD9D1EDB}"
@@ -132,8 +133,8 @@ FrameWidgetClass {
          "wip pve pvp "\
          ""\
          "argp 4eva"
-         "Font Size" 64
-         "Min Font Size" 52
+         "Font Size" 48
+         "Min Font Size" 48
          "Horizontal Alignment" Center
          "Vertical Alignment" Center
          Wrap 0

@@ -19,11 +19,6 @@ MO_SpawnCategorizationTriggerEntity : "{3684DCA233B69D73}Prefabs/Systems/MO_Spaw
  scale 0.6
  SphereRadius 9
 }
-SCR_IndestructibleEnvironmentalEntity : "{5108922392AE7139}PrefabsEditable/Auto/Rocks/Granite/E_GraniteCliff_01.et" {
- coords 514.151 5.841 12426.217
- angles 27.163 -48.806 -7.413
- scale 0.683
-}
 GenericEntity : "{522DCD528AE27052}Prefabs/Systems/MilitaryBase/ConflictRelayRadio.et" {
  components {
   SCR_CampaignMilitaryBaseComponent "{5C727AD73024FB00}" {

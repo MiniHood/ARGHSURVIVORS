@@ -1,3 +1,31 @@
 GenericEntity : "{533AC2E8A0F5272A}Prefabs/Structures/BuildingParts/BuildingParts_Base.et" {
  ID "5272E317A914F6DB"
+ components {
+  RigidBody "{5111E74C06F5C1E1}" {
+   Layers 0x1 0
+  }
+  ActionsManagerComponent "{66A428372F93D310}" {
+   additionalActions {
+    FM_DrinkWaterPlayerAction "{66C623266C412FD5}" {
+     ParentContextList +{
+     }
+     UIInfo UIInfo "{66C6232606792B75}" {
+     }
+     VisibilityRange -1
+     m_iWaterValue 0.1
+    }
+    ARGH_DrinkWaterPlayerAction "{684836DB9EAD8ED9}" {
+     ParentContextList {
+      "Default"
+     }
+     UIInfo UIInfo "{6C3A9D9F40A4B2F5}" {
+      Name "Drink Water"
+     }
+     Duration 3
+     "Sort Priority" -1
+     m_iWaterValue 0.25
+    }
+   }
+  }
+ }
 }

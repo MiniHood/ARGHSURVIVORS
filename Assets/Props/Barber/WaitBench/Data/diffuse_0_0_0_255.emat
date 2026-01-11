@@ -1,9 +1,0 @@
-MatPBRBasic {
- SpecularMul 0.38
- AOScale 1.133
- DielectricReflectance 0.061
- CavityFromAO 0.163
- GlobalAOPower 0.373
- BCRMap "{903A52FFD9D7EB35}Assets/Props/Barber/WaitBench/waitbench_BCR.edds"
- NMOMap "{A8E2E96D00A0B9AB}Assets/Props/Barber/WaitBench/waitbench_NMO.edds"
-}

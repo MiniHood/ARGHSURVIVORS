@@ -8,4 +8,50 @@ GenericEntity : "{6E9190BC2713551D}Prefabs/Compositions/Slotted/BuildableComposi
    Enabled 0
   }
  }
+ {
+  GenericEntity {
+   ID "5D06FC881A7A276B"
+   {
+    GenericEntity {
+     ID "5D371ACBDC5FA529"
+     components {
+      SCR_FactionAffiliationComponent "{5A50E7655452A21D}" {
+       Enabled 0
+      }
+      UniversalInventoryStorageComponent "{56F2C6D15FE6C4CE}" {
+       Enabled 0
+      }
+      SCR_ArsenalInventoryStorageManagerComponent "{56F2C6D1431ADBA8}" {
+       Enabled 0
+      }
+      ActionsManagerComponent "{56F2C6D1431ADB12}" {
+       Enabled 0
+      }
+     }
+    }
+   }
+  }
+  GenericEntity {
+   ID "5D06FC881A7A27FE"
+   {
+    GenericEntity {
+     ID "5D371ACBC8811EDA"
+     components {
+      SCR_FactionAffiliationComponent "{5A50E7655452A21D}" {
+       Enabled 0
+      }
+      UniversalInventoryStorageComponent "{56F2C6D15FE6C4CE}" {
+       Enabled 0
+      }
+      SCR_ArsenalInventoryStorageManagerComponent "{56F2C6D1431ADBA8}" {
+       Enabled 0
+      }
+      ActionsManagerComponent "{56F2C6D1431ADB12}" {
+       Enabled 0
+      }
+     }
+    }
+   }
+  }
+ }
 }

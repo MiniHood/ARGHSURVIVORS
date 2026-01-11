@@ -1,22 +1,65 @@
+$grp SCR_IndestructibleEnvironmentalEntity : "{5108922392AE7139}PrefabsEditable/Auto/Rocks/Granite/E_GraniteCliff_01.et" {
+ {
+  components {
+   SCR_EditableEntityComponent "{58910CB42762D472}" {
+    m_Flags 896
+   }
+  }
+  coords 519.852 15.159 12419.156
+  angles 69.8 26.788 110.881
+  scale 0.698
+ }
+ {
+  components {
+   SCR_EditableEntityComponent "{58910CB42762D472}" {
+    m_Flags 896
+   }
+  }
+  coords 516.605 15.206 12418.707
+  angles 69.8 26.788 110.881
+  scale 0.698
+ }
+}
 GenericEntity : "{614D8A633504DAD2}Prefabs/Props/Civilian/ARGHSUITCASE.et" {
  coords 477.483 2.423 12298.604
  angles 0 -130.862 0
 }
-GenericEntity : "{74ECB0169F30948C}Prefabs/World/Locations/Common/LocationBase.et" {
- components {
-  SCR_EditableCommentComponent "{529AB059519FE609}" {
-   m_UIInfo SCR_EditableCommentUIInfo "{5298E609432D192D}" {
-    Name "The Bunker"
-    Icon "{DD5F23CBB1731598}UI/Textures/Editor/EditableEntities/Systems/EditableEntity_System_Base.edds"
+$grp GenericEntity : "{74ECB0169F30948C}Prefabs/World/Locations/Common/LocationBase.et" {
+ {
+  components {
+   SCR_EditableCommentComponent "{529AB059519FE609}" {
+    m_UIInfo SCR_EditableCommentUIInfo "{5298E609432D192D}" {
+     Name "The Bunker"
+     Icon "{DD5F23CBB1731598}UI/Textures/Editor/EditableEntities/Systems/EditableEntity_System_Base.edds"
+    }
+    m_fSizeCoef 1.5
    }
-   m_fSizeCoef 1.5
+   SCR_MapDescriptorComponent "{527892B6ED748CEB}" {
+    DisplayName "The Bunker"
+    MainType "Name City"
+   }
   }
-  SCR_MapDescriptorComponent "{527892B6ED748CEB}" {
-   DisplayName "The Bunker"
-   MainType "Name City"
-  }
+  coords 528.334 49.437 12342.4
  }
- coords 528.334 49.437 12342.4
+ {
+  components {
+   SCR_EditableCommentComponent "{529AB059519FE609}" {
+    m_EntityType GENERIC
+    m_UIInfo SCR_EditableCommentUIInfo "{5298E609432D192D}" {
+     Name "Kamensk Port Bunkers"
+     m_Image "{15A293B1904F942B}UI/Textures/Icons/icon_objective.edds"
+    }
+    m_Flags 6328
+    m_fSizeCoef 1.5
+   }
+   SCR_MapDescriptorComponent "{527892B6ED748CEB}" {
+    DisplayName "Kamensk Port Bunkers"
+    MainType Spawnpoint
+    Scale 1
+   }
+  }
+  coords 12048.947 6.903 10512.27
+ }
 }
 $grp ParticleEffectEntity : "{815D11CFF3A86DE2}Prefabs/Particles/Water/BUBBLEARGH.et" {
  {
@@ -86,37 +129,7 @@ StaticModelEntity : "{94021BCA593A8CFF}Prefabs/Structures/BuildingParts/Entry/Co
 }
 $grp LightEntity : "{A45B8995A66B9146}Prefabs/Structures/BuildingParts/Lights/LightPrefabs/LightIndustrial_01_light_spot_exterior.et" {
  {
-  coords 490.847 11.648 12302.964
-  angles -88.713 -180 -180
-  Color 0.6529 0.2747 0.076 1
-  LV 8.43
-  Type Point
-  Radius 44
-  NearPlane 0.9
-  Dynamic 1
- }
- {
   coords 484.501 10.255 12307.512
-  angles -88.713 -180 -180
-  Color 0.6529 0.2747 0.076 1
-  LV 8.43
-  Type Point
-  Radius 44
-  NearPlane 0.9
-  Dynamic 1
- }
- {
-  coords 474.861 10.119 12329.903
-  angles -88.713 -180 -180
-  Color 0.6529 0.2747 0.076 1
-  LV 8.43
-  Type Point
-  Radius 44
-  NearPlane 0.9
-  Dynamic 1
- }
- {
-  coords 476.57 9.933 12323.895
   angles -88.713 -180 -180
   Color 0.6529 0.2747 0.076 1
   LV 8.43
@@ -157,26 +170,6 @@ $grp LightEntity : "{A45B8995A66B9146}Prefabs/Structures/BuildingParts/Lights/Li
  }
  {
   coords 468.681 12.093 12384.162
-  angles -88.713 -180 -180
-  Color 0.6529 0.2747 0.076 1
-  LV 8.43
-  Type Point
-  Radius 44
-  NearPlane 0.9
-  Dynamic 1
- }
- {
-  coords 506.884 2.537 12382.236
-  angles -88.713 -180 -180
-  Color 0.6529 0.2747 0.076 1
-  LV 8.43
-  Type Point
-  Radius 44
-  NearPlane 0.9
-  Dynamic 1
- }
- {
-  coords 508.788 2.195 12376.278
   angles -88.713 -180 -180
   Color 0.6529 0.2747 0.076 1
   LV 8.43
@@ -456,26 +449,6 @@ $grp LightEntity : "{A45B8995A66B9146}Prefabs/Structures/BuildingParts/Lights/Li
   Dynamic 1
  }
  {
-  coords 511.452 11.045 12304.248
-  angles -88.713 -180 -180
-  Color 0.6529 0.2747 0.076 1
-  LV 8.43
-  Type Point
-  Radius 44
-  NearPlane 0.9
-  Dynamic 1
- }
- {
-  coords 506.94 11.11 12302.538
-  angles -88.713 -180 -180
-  Color 0.6529 0.2747 0.076 1
-  LV 8.43
-  Type Point
-  Radius 44
-  NearPlane 0.9
-  Dynamic 1
- }
- {
   coords 502.282 11.092 12301.922
   angles -88.713 -180 -180
   Color 0.6529 0.2747 0.076 1
@@ -486,9 +459,36 @@ $grp LightEntity : "{A45B8995A66B9146}Prefabs/Structures/BuildingParts/Lights/Li
   Dynamic 1
  }
 }
+$grp StaticModelEntity : "{B00E14C07DEE788A}Prefabs/Compositions/Misc/SubCompositions/Utility/Helipad_Lights_USSR_01.et" {
+ {
+  coords 11103.246 0.832 1636.797
+  {
+   GenericEntity : "{32C5F197AAFE596B}Prefabs/Systems/Services/ServicePointDelegate_Fuel.et" {
+    components {
+     Hierarchy "{6854C788811ED148}" {
+     }
+    }
+    coords -4.215 0.353 3.7
+   }
+   GenericEntity : "{C3F15A9E8B4D2C11}Prefabs/Systems/AmbientVehicles/AmbientFlyingVehicleSpawnpoint_Base.et" {
+    components {
+     Hierarchy "{6854C789CB8730EA}" {
+     }
+    }
+    coords 1.027 0.388 0.268
+   }
+  }
+ }
+ {
+  coords 11424.801 1.002 2314.607
+ }
+ {
+  coords 9884.264 0.917 10239.493
+ }
+}
 $grp SCR_DestructibleEntity : "{C0760C6F3B2EB37A}Prefabs/ARGH/Signs/AFRAMESIGN_BASE.et" {
  {
-  coords 520.796 3.286 12313.016
+  coords 521.117 3.286 12312.7
   angles 0 44.528 0
  }
  {
@@ -500,85 +500,557 @@ $grp SCR_DestructibleEntity : "{C0760C6F3B2EB37A}Prefabs/ARGH/Signs/AFRAMESIGN_B
   angles 0 -28.743 0
  }
 }
+$grp GenericEntity : "{C3F15A9E8B4D2C11}Prefabs/Systems/AmbientVehicles/AmbientFlyingVehicleSpawnpoint_Base.et" {
+ {
+  coords 2779.341 24.478 5393.224
+  angles 0 -90 0
+ }
+ {
+  coords 2673.427 24.218 5410.646
+  angles 0 -90 0
+ }
+ {
+  coords 2600.485 24.22 5417.87
+  angles 0 -90 0
+ }
+ {
+  coords 2675.878 24.219 5571.323
+  angles 0 -90 0
+ }
+ {
+  coords 2602.927 24.22 5571.215
+  angles 0 -90 0
+ }
+ {
+  coords 2478.055 24.218 5487.726
+  angles 0 -90 0
+ }
+ {
+  coords 2685.643 24.219 5230.354
+  angles 0 -90 0
+ }
+ {
+  coords 2521.971 24.279 5306.76
+  angles 0 -90 0
+ }
+ {
+  coords 2689.84 24.219 5071.857
+  angles 0 -90 0
+ }
+ {
+  coords 2859.163 24.218 5010.379
+  angles 0 -90 0
+ }
+ {
+  coords 2794.25 24.219 4954.102
+  angles 0 -90 0
+ }
+ {
+  coords 2991.758 24.237 4662.629
+  angles 0 -90 0
+ }
+ {
+  coords 3070.258 24.217 4719.83
+  angles 0 -90 0
+ }
+ {
+  coords 8838.505 1.582 5961.243
+ }
+ {
+  coords 7191.393 393.057 7271.665
+ }
+ {
+  coords 2184.752 8.035 877.416
+  angles 0 16.965 0
+ }
+ {
+  coords 2166.216 9.142 883.722
+  angles 0 16.965 0
+ }
+ {
+  coords 2145.656 10.345 889.003
+  angles 0 16.965 0
+ }
+ {
+  coords 1344.565 72.081 12489.488
+ }
+}
 SCR_DestructibleBuildingEntity : "{C4FD5AA3368F166C}Prefabs/Structures/Industrial/Sheds/ShedMetal_03/ShedMetal_03_v1.et" {
  coords 504.061 190.503 12302.675
  angles 0 178.071 0
  scale 1.43
 }
-$grp GenericEntity : "{DE998437E3B1B86C}Prefabs/World/Locations/Cain/Urban/Gorshkovo_01.et" {
- KamenskBunkerMap {
-  components {
-   SCR_EditableCommentComponent "{529AB059519FE609}" {
-    m_EntityType GENERIC
-    m_UIInfo SCR_EditableLinkedContentBrowserUIInfo "{5298E609432D192D}" {
-     Name "Kamensk Port Bunkers"
-     m_Image "{15A293B1904F942B}UI/Textures/Icons/icon_objective.edds"
+$grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Components/Area.et" {
+ UgoldarMapText {
+  coords 7542.332 11.15 4497.583
+  {
+   GenericEntity Layer2 : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
+    coords 0 0 0
+    {
+     GenericEntity SlotMarker1 : "{E537867C6E760514}Prefabs/Systems/ScenarioFramework/Components/SlotMarker.et" {
+      components {
+       SCR_ScenarioFrameworkSlotMarker "{5EA2BD9901E5E82E}" {
+        m_MapMarkerType SCR_ScenarioFrameworkMarkerCustom "{684AB362623272D3}" {
+         m_eMapMarkerIcon ARROW_LARGE
+         m_eMapMarkerColor RED
+        }
+       }
+      }
+      coords 0 0 0
+     }
     }
-    m_Flags 6328
    }
-   SCR_MapDescriptorComponent "{527892B6ED748CEB}" {
-    DisplayName "Kamensk Port Bunkers"
-    MainType "Name Town"
-    Scale 0.5
+   GenericEntity : "{74ECB0169F30948C}Prefabs/World/Locations/Common/LocationBase.et" {
+    components {
+     SCR_EditableCommentComponent "{529AB059519FE609}" {
+      m_UIInfo SCR_EditableCommentUIInfo "{5298E609432D192D}" {
+       Name "Ugoldar Bunkers"
+       m_Image "{15A293B1904F942B}UI/Textures/Icons/icon_objective.edds"
+      }
+      m_EntityInteraction SCR_EditableAttachableEntityInteraction "{684AB36E21299FF0}" {
+       m_aAttachableTypes {
+        GENERIC
+       }
+      }
+      m_Flags 6200
+      m_fSizeCoef 1.5
+     }
+     SCR_EditableEntityComponent "{684AB36B64E1865C}" {
+      m_UIInfo SCR_ColorUIInfo "{684AB36B4937D09F}" {
+       Name "Ugoldar Bunker"
+       Icon "{DB2E20B0E888AAA7}UI/Textures/Conflict/no-radio--range-icon-outline_UI.edds"
+       IconSetName "{C9D19DBFDE7AD72D}UI/Imagesets/Conflict/conflict-icons.imageset"
+       m_cColor 1 0.115 0 1
+      }
+      m_bAutoRegister ALWAYS
+      m_bStatic 1
+      m_Flags 2184
+     }
+     SCR_MapDescriptorComponent "{527892B6ED748CEB}" {
+      DisplayName "Ugoldar Bunkers"
+      ImagesetQuadElement "{C9D19DBFDE7AD72D}UI/Imagesets/Conflict/conflict-icons.imageset"
+      MainType "Name Village"
+     }
+    }
+    coords -4.429 4.286 -0.594
    }
   }
-  coords 12048.947 6.903 10512.27
  }
- MineralyBunkerEntrance {
-  components {
-   SCR_EditableCommentComponent "{529AB059519FE609}" {
-    m_EntityType GENERIC
-    m_UIInfo SCR_EditableLinkedContentBrowserUIInfo "{5298E609432D192D}" {
-     Name "Mineraly Midcoast Bunkers"
-     Icon "{DB2E20B0E888AAA7}UI/Textures/Conflict/no-radio--range-icon-outline_UI.edds"
-     m_Image "{DB2E20B0E888AAA7}UI/Textures/Conflict/no-radio--range-icon-outline_UI.edds"
+ GorshkovoBunkerMap {
+  coords 8280.353 53.331 6723.402
+  {
+   GenericEntity Layer5 : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
+    coords 0 0 0
+    {
+     GenericEntity SlotMarker4 : "{E537867C6E760514}Prefabs/Systems/ScenarioFramework/Components/SlotMarker.et" {
+      components {
+       SCR_ScenarioFrameworkSlotMarker "{5EA2BD9901E5E82E}" {
+        m_MapMarkerType SCR_ScenarioFrameworkMarkerCustom "{684AB362623272D3}" {
+         m_eMapMarkerIcon ARROW_LARGE
+         m_eMapMarkerColor RED
+        }
+       }
+      }
+      coords 0 0 0
+     }
     }
-    m_Flags 6328
    }
-   SCR_MapDescriptorComponent "{527892B6ED748CEB}" {
-    DisplayName "Mineraly Midcoast Bunkers"
-    MapItemDescriptor 1
-    MainType "Icon (generic)"
-    UnitType Infantry
-    Scale 0.5
+   GenericEntity : "{74ECB0169F30948C}Prefabs/World/Locations/Common/LocationBase.et" {
+    components {
+     SCR_EditableCommentComponent "{529AB059519FE609}" {
+      m_UIInfo SCR_EditableCommentUIInfo "{5298E609432D192D}" {
+       Name "Gorshkovo Bunkers"
+       m_Image "{15A293B1904F942B}UI/Textures/Icons/icon_objective.edds"
+      }
+      m_EntityInteraction SCR_EditableAttachableEntityInteraction "{684AB36E21299FF0}" {
+       m_aAttachableTypes {
+        GENERIC
+       }
+      }
+      m_Flags 6200
+      m_fSizeCoef 1.5
+     }
+     SCR_EditableEntityComponent "{684AB36B64E1865C}" {
+      m_UIInfo SCR_ColorUIInfo "{684AB36B4937D09F}" {
+       Name "Gorshkovo Bunker"
+       Icon "{DB2E20B0E888AAA7}UI/Textures/Conflict/no-radio--range-icon-outline_UI.edds"
+       IconSetName "{C9D19DBFDE7AD72D}UI/Imagesets/Conflict/conflict-icons.imageset"
+       m_cColor 1 0.115 0 1
+      }
+      m_bAutoRegister ALWAYS
+      m_bStatic 1
+      m_Flags 2184
+     }
+     SCR_MapDescriptorComponent "{527892B6ED748CEB}" {
+      DisplayName "Gorshkovo Bunkers"
+      ImagesetQuadElement "{C9D19DBFDE7AD72D}UI/Imagesets/Conflict/conflict-icons.imageset"
+      MainType "Name Village"
+     }
+    }
+    coords 1.78 -3.111 0.733
    }
   }
-  coords 6233.07 43.494 8075.316
  }
- UgoldarBunkerEntrance {
-  components {
-   SCR_EditableCommentComponent "{529AB059519FE609}" {
-    m_EntityType GENERIC
-    m_UIInfo SCR_EditableLinkedContentBrowserUIInfo "{5298E609432D192D}" {
-     Name "Ugoldar Bunkers"
-     m_Image "{15A293B1904F942B}UI/Textures/Icons/icon_objective.edds"
+ LeRocherBunkerMap {
+  coords 11426.319 93.953 10587.804
+  {
+   GenericEntity Layer6 : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
+    coords 0 0 0
+    {
+     GenericEntity SlotMarker5 : "{E537867C6E760514}Prefabs/Systems/ScenarioFramework/Components/SlotMarker.et" {
+      components {
+       SCR_ScenarioFrameworkSlotMarker "{5EA2BD9901E5E82E}" {
+        m_MapMarkerType SCR_ScenarioFrameworkMarkerCustom "{684AB362623272D3}" {
+         m_eMapMarkerIcon ARROW_LARGE
+         m_eMapMarkerColor RED
+        }
+       }
+      }
+      coords 0 0 0
+     }
     }
-    m_Flags 6328
    }
-   SCR_MapDescriptorComponent "{527892B6ED748CEB}" {
-    DisplayName "Ugoldar Bunkers"
-    MainType "Name Town"
-    Scale 0.5
+   GenericEntity : "{74ECB0169F30948C}Prefabs/World/Locations/Common/LocationBase.et" {
+    components {
+     SCR_EditableCommentComponent "{529AB059519FE609}" {
+      m_UIInfo SCR_EditableCommentUIInfo "{5298E609432D192D}" {
+       Name "LeRocher Bunkers"
+       m_Image "{15A293B1904F942B}UI/Textures/Icons/icon_objective.edds"
+      }
+      m_EntityInteraction SCR_EditableAttachableEntityInteraction "{684AB36E21299FF0}" {
+       m_aAttachableTypes {
+        GENERIC
+       }
+      }
+      m_Flags 6200
+      m_fSizeCoef 1.5
+     }
+     SCR_EditableEntityComponent "{684AB36B64E1865C}" {
+      m_UIInfo SCR_ColorUIInfo "{684AB36B4937D09F}" {
+       Name "LeRocher Bunker"
+       Icon "{DB2E20B0E888AAA7}UI/Textures/Conflict/no-radio--range-icon-outline_UI.edds"
+       IconSetName "{C9D19DBFDE7AD72D}UI/Imagesets/Conflict/conflict-icons.imageset"
+       m_cColor 1 0.115 0 1
+      }
+      m_bAutoRegister ALWAYS
+      m_bStatic 1
+      m_Flags 2184
+     }
+     SCR_MapDescriptorComponent "{527892B6ED748CEB}" {
+      DisplayName "LeRocher Bunkers"
+      ImagesetQuadElement "{C9D19DBFDE7AD72D}UI/Imagesets/Conflict/conflict-icons.imageset"
+      MainType "Name Village"
+     }
+    }
+    coords 1.78 -3.111 0.733
    }
   }
-  coords 7541.815 11.091 4497.274
  }
- UdarnikBunker {
-  components {
-   SCR_EditableCommentComponent "{529AB059519FE609}" {
-    m_EntityType GENERIC
-    m_UIInfo SCR_EditableLinkedContentBrowserUIInfo "{5298E609432D192D}" {
-     Name "Udarnik Bunkers"
-     m_Image "{15A293B1904F942B}UI/Textures/Icons/icon_objective.edds"
+ BareRidgeBunkerMap {
+  coords 7746.733 318.594 8056.857
+  {
+   GenericEntity Layer8 : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
+    coords 0 0 0
+    {
+     GenericEntity SlotMarker7 : "{E537867C6E760514}Prefabs/Systems/ScenarioFramework/Components/SlotMarker.et" {
+      components {
+       SCR_ScenarioFrameworkSlotMarker "{5EA2BD9901E5E82E}" {
+        m_MapMarkerType SCR_ScenarioFrameworkMarkerCustom "{684AB362623272D3}" {
+         m_eMapMarkerIcon ARROW_LARGE
+         m_eMapMarkerColor RED
+        }
+       }
+      }
+      coords 0 0 0
+     }
     }
-    m_Flags 6328
    }
-   SCR_MapDescriptorComponent "{527892B6ED748CEB}" {
-    DisplayName "Udarnik Bunkers"
-    MainType "Name Town"
-    Scale 0.5
+   GenericEntity : "{74ECB0169F30948C}Prefabs/World/Locations/Common/LocationBase.et" {
+    components {
+     SCR_EditableCommentComponent "{529AB059519FE609}" {
+      m_UIInfo SCR_EditableCommentUIInfo "{5298E609432D192D}" {
+       Name "BareRidge Bunkers"
+       m_Image "{15A293B1904F942B}UI/Textures/Icons/icon_objective.edds"
+      }
+      m_EntityInteraction SCR_EditableAttachableEntityInteraction "{684AB36E21299FF0}" {
+       m_aAttachableTypes {
+        GENERIC
+       }
+      }
+      m_Flags 6200
+      m_fSizeCoef 1.5
+     }
+     SCR_EditableEntityComponent "{684AB36B64E1865C}" {
+      m_UIInfo SCR_ColorUIInfo "{684AB36B4937D09F}" {
+       Name "BareRidge Bunker"
+       Icon "{DB2E20B0E888AAA7}UI/Textures/Conflict/no-radio--range-icon-outline_UI.edds"
+       IconSetName "{C9D19DBFDE7AD72D}UI/Imagesets/Conflict/conflict-icons.imageset"
+       m_cColor 1 0.115 0 1
+      }
+      m_bAutoRegister ALWAYS
+      m_bStatic 1
+      m_Flags 2184
+     }
+     SCR_MapDescriptorComponent "{527892B6ED748CEB}" {
+      DisplayName "BareRidge Bunkers"
+      ImagesetQuadElement "{C9D19DBFDE7AD72D}UI/Imagesets/Conflict/conflict-icons.imageset"
+      MainType "Name Village"
+     }
+    }
+    coords 1.78 -3.111 0.733
    }
   }
-  coords 4428.493 46.23 3401.769
  }
+ UdarnikMapText {
+  coords 4428.268 46.215 3402.242
+  {
+   GenericEntity Layer3 : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
+    coords 0 0 0
+    {
+     GenericEntity SlotMarker2 : "{E537867C6E760514}Prefabs/Systems/ScenarioFramework/Components/SlotMarker.et" {
+      components {
+       SCR_ScenarioFrameworkSlotMarker "{5EA2BD9901E5E82E}" {
+        m_MapMarkerType SCR_ScenarioFrameworkMarkerCustom "{684AB362623272D3}" {
+         m_eMapMarkerIcon ARROW_LARGE
+         m_eMapMarkerColor RED
+        }
+       }
+      }
+      coords 0 0 0
+     }
+    }
+   }
+   GenericEntity : "{74ECB0169F30948C}Prefabs/World/Locations/Common/LocationBase.et" {
+    components {
+     SCR_EditableCommentComponent "{529AB059519FE609}" {
+      m_UIInfo SCR_EditableCommentUIInfo "{5298E609432D192D}" {
+       Name "Udarnik Bunkers"
+       m_Image "{15A293B1904F942B}UI/Textures/Icons/icon_objective.edds"
+      }
+      m_EntityInteraction SCR_EditableAttachableEntityInteraction "{684AB36E21299FF0}" {
+       m_aAttachableTypes {
+        GENERIC
+       }
+      }
+      m_Flags 6200
+      m_fSizeCoef 1.5
+     }
+     SCR_EditableEntityComponent "{684AB36B64E1865C}" {
+      m_UIInfo SCR_ColorUIInfo "{684AB36B4937D09F}" {
+       Name "Udarnik Bunkers"
+       Icon "{DB2E20B0E888AAA7}UI/Textures/Conflict/no-radio--range-icon-outline_UI.edds"
+       IconSetName "{C9D19DBFDE7AD72D}UI/Imagesets/Conflict/conflict-icons.imageset"
+       m_cColor 1 0.115 0 1
+      }
+      m_bAutoRegister ALWAYS
+      m_bStatic 1
+      m_Flags 2184
+     }
+     SCR_MapDescriptorComponent "{527892B6ED748CEB}" {
+      DisplayName "Udarnik Bunkers"
+      ImagesetQuadElement "{C9D19DBFDE7AD72D}UI/Imagesets/Conflict/conflict-icons.imageset"
+      MainType "Name Village"
+     }
+    }
+    coords -1.712 -0.616 -0.594
+   }
+  }
+ }
+ MineralyMidCoastBunkerMapText {
+  coords 6228.85 41.122 8072.534
+  {
+   GenericEntity Layer1 : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
+    coords 0 0 0
+    {
+     GenericEntity SlotMarker3 : "{E537867C6E760514}Prefabs/Systems/ScenarioFramework/Components/SlotMarker.et" {
+      components {
+       SCR_ScenarioFrameworkSlotMarker "{5EA2BD9901E5E82E}" {
+        m_MapMarkerType SCR_ScenarioFrameworkMarkerCustom "{684AB362623272D3}" {
+         m_eMapMarkerIcon ARROW_LARGE
+         m_eMapMarkerColor RED
+        }
+       }
+      }
+      coords 0 0 0
+     }
+    }
+   }
+   GenericEntity LocationBase1 : "{74ECB0169F30948C}Prefabs/World/Locations/Common/LocationBase.et" {
+    components {
+     SCR_EditableCommentComponent "{529AB059519FE609}" {
+      m_UIInfo SCR_EditableCommentUIInfo "{5298E609432D192D}" {
+       Name "Mineraly Mid Coast Bunker"
+       m_Image "{15A293B1904F942B}UI/Textures/Icons/icon_objective.edds"
+      }
+      m_EntityInteraction SCR_EditableAttachableEntityInteraction "{684AB36E21299FF0}" {
+       m_aAttachableTypes {
+        GENERIC
+       }
+      }
+      m_Flags 6200
+      m_fSizeCoef 1.5
+     }
+     SCR_EditableEntityComponent "{684AB36B64E1865C}" {
+      m_UIInfo SCR_ColorUIInfo "{684AB36B4937D09F}" {
+       Name "Mineraly Mid Coast Bunker"
+       Icon "{DB2E20B0E888AAA7}UI/Textures/Conflict/no-radio--range-icon-outline_UI.edds"
+       IconSetName "{C9D19DBFDE7AD72D}UI/Imagesets/Conflict/conflict-icons.imageset"
+       m_cColor 1 0.115 0 1
+      }
+      m_bAutoRegister ALWAYS
+      m_bStatic 1
+      m_Flags 2184
+     }
+     SCR_MapDescriptorComponent "{527892B6ED748CEB}" {
+      DisplayName "Mineraly Mid Coast Bunker"
+      ImagesetQuadElement "{C9D19DBFDE7AD72D}UI/Imagesets/Conflict/conflict-icons.imageset"
+      MainType "Name Village"
+     }
+    }
+    coords -1.712 -0.616 -0.594
+   }
+  }
+ }
+ ForestBunkerMapText {
+  coords 9541.124 131.845 9934.499
+  {
+   GenericEntity Layer7 : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
+    coords 0 0 0
+    {
+     GenericEntity SlotMarker6 : "{E537867C6E760514}Prefabs/Systems/ScenarioFramework/Components/SlotMarker.et" {
+      components {
+       SCR_ScenarioFrameworkSlotMarker "{5EA2BD9901E5E82E}" {
+        m_MapMarkerType SCR_ScenarioFrameworkMarkerCustom "{684AB362623272D3}" {
+         m_eMapMarkerIcon ARROW_LARGE
+         m_eMapMarkerColor RED
+        }
+       }
+      }
+      coords 0 0 0
+     }
+    }
+   }
+   GenericEntity LocationBase2 : "{74ECB0169F30948C}Prefabs/World/Locations/Common/LocationBase.et" {
+    components {
+     SCR_EditableCommentComponent "{529AB059519FE609}" {
+      m_UIInfo SCR_EditableCommentUIInfo "{5298E609432D192D}" {
+       Name "Forest Bunkers"
+       m_Image "{15A293B1904F942B}UI/Textures/Icons/icon_objective.edds"
+      }
+      m_EntityInteraction SCR_EditableAttachableEntityInteraction "{684AB36E21299FF0}" {
+       m_aAttachableTypes {
+        GENERIC
+       }
+      }
+      m_Flags 6200
+      m_fSizeCoef 1.5
+     }
+     SCR_EditableEntityComponent "{684AB36B64E1865C}" {
+      m_UIInfo SCR_ColorUIInfo "{684AB36B4937D09F}" {
+       Name "Forest Bunkers"
+       Icon "{DB2E20B0E888AAA7}UI/Textures/Conflict/no-radio--range-icon-outline_UI.edds"
+       IconSetName "{C9D19DBFDE7AD72D}UI/Imagesets/Conflict/conflict-icons.imageset"
+       m_cColor 1 0.115 0 1
+      }
+      m_bAutoRegister ALWAYS
+      m_bStatic 1
+      m_Flags 2184
+     }
+     SCR_MapDescriptorComponent "{527892B6ED748CEB}" {
+      DisplayName "Forest Bunkers"
+      ImagesetQuadElement "{C9D19DBFDE7AD72D}UI/Imagesets/Conflict/conflict-icons.imageset"
+      MainType "Name Village"
+     }
+    }
+    coords -1.712 -0.616 -0.594
+   }
+  }
+ }
+ GreenHIllMapText {
+  coords 6730.389 441.183 6892.253
+  {
+   GenericEntity Layer9 : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
+    coords 0 0 0
+    {
+     GenericEntity SlotMarker8 : "{E537867C6E760514}Prefabs/Systems/ScenarioFramework/Components/SlotMarker.et" {
+      components {
+       SCR_ScenarioFrameworkSlotMarker "{5EA2BD9901E5E82E}" {
+        m_MapMarkerType SCR_ScenarioFrameworkMarkerCustom "{684AB362623272D3}" {
+         m_eMapMarkerIcon ARROW_LARGE
+         m_eMapMarkerColor RED
+        }
+       }
+      }
+      coords 0 0 0
+     }
+    }
+   }
+   GenericEntity LocationBase3 : "{74ECB0169F30948C}Prefabs/World/Locations/Common/LocationBase.et" {
+    components {
+     SCR_EditableCommentComponent "{529AB059519FE609}" {
+      m_UIInfo SCR_EditableCommentUIInfo "{5298E609432D192D}" {
+       Name "Green HIll Bunkers"
+       m_Image "{15A293B1904F942B}UI/Textures/Icons/icon_objective.edds"
+      }
+      m_EntityInteraction SCR_EditableAttachableEntityInteraction "{684AB36E21299FF0}" {
+       m_aAttachableTypes {
+        GENERIC
+       }
+      }
+      m_Flags 6200
+      m_fSizeCoef 1.5
+     }
+     SCR_EditableEntityComponent "{684AB36B64E1865C}" {
+      m_UIInfo SCR_ColorUIInfo "{684AB36B4937D09F}" {
+       Name "Green HIll Bunkers"
+       Icon "{DB2E20B0E888AAA7}UI/Textures/Conflict/no-radio--range-icon-outline_UI.edds"
+       IconSetName "{C9D19DBFDE7AD72D}UI/Imagesets/Conflict/conflict-icons.imageset"
+       m_cColor 1 0.115 0 1
+      }
+      m_bAutoRegister ALWAYS
+      m_bStatic 1
+      m_Flags 2184
+     }
+     SCR_MapDescriptorComponent "{527892B6ED748CEB}" {
+      DisplayName "Green HIll Bunkers"
+      ImagesetQuadElement "{C9D19DBFDE7AD72D}UI/Imagesets/Conflict/conflict-icons.imageset"
+      MainType "Name Village"
+     }
+    }
+    coords -1.712 -0.616 -0.594
+   }
+  }
+ }
+}
+SCR_ChimeraCharacter AttachmentsTrader : "{F3400FAF5F2CA34C}Prefabs/MercOut/MO_Trader_BlackMarketArmsDealer.et" {
+ components {
+  DE_TraderComponent "{66F68382BBCE97CA}" {
+   traderName "Attachment and Equipment Dealer"
+   cardPayment 1
+   traderMargin 0.5
+   types 197120
+  }
+  BaseLoadoutManagerComponent "{520EA1D2DB11821E}" {
+   Slots {
+    LoadoutSlotInfo Hat {
+     Prefab "{AD1CD4DBAF105D2B}Prefabs/Characters/Items/NVG/GPNVG_18.et"
+    }
+    LoadoutSlotInfo Back {
+     Prefab "{95D4766BBE46F23D}Prefabs/Items/Equipment/Backpacks/Backpack_IIFS_FieldPack.et"
+    }
+    LoadoutSlotInfo Vest {
+     Prefab "{9945D5435F12C370}Prefabs/Characters/Vests/Vest_M79GrenadeCarrier/Vest_M79GrenadeCarrier.et"
+    }
+    LoadoutSlotInfo HandWear {
+     Prefab "{1E991CD19C6F7659}Prefabs/Characters/Handwear/Gloves_MechanixMpact/Gloves_mpack_Brown.et"
+    }
+    LoadoutSlotInfo NVS_NVGSlot {
+    }
+    LoadoutSlotInfo Head {
+    }
+   }
+  }
+ }
+ coords 513.261 6.89 12302.176
+ angles 0 -4.394 0
 }

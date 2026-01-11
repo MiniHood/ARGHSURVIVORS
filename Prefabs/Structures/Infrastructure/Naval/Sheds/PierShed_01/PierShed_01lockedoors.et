@@ -1,0 +1,176 @@
+SCR_DestructibleBuildingEntity : "{A43A100E3C377DB2}Prefabs/Structures/Core/Building_Base.et" {
+ ID "F0DBA538AC2A0552"
+ components {
+  SignalsManagerComponent "{68497080B1F9B1F6}" {
+  }
+  SCR_BuildingSoundComponent "{68497080B1F9B1FD}" {
+   Filenames {
+    "{BC9DAF72A24FB03E}Sounds/Structures/Infrastructure/Naval/Sheds/Structures_PierShed_01.acp"
+   }
+   IncludeInactive 1
+   m_iTimeIntervalMin 5
+   m_iTimeIntervalMax 12
+   m_vMins -4 3 -7
+   m_vMaxs 4 4 7
+  }
+  MeshObject "{506EDA9D46FC6C06}" {
+   Object "{FC7D4C391B270491}Assets/Structures/Infrastructure/Naval/Sheds/PierShed_01/PierShed_01.xob"
+   ClutterOccluder 0
+  }
+  RigidBody "{506EDA9CBE1B57FF}" {
+   ModelGeometry 1
+   Static 1
+  }
+  SCR_DestructibleBuildingComponent "{5DA867E27E4539E3}" : "{E97151493E89A500}Prefabs/Structures/Core/Destruction/DestructibleBuildingComponent_Wood_Medium.ct" {
+   "Additional hit zones" {
+    SCR_HitZone Default {
+     "Explosive multiplier" 20
+    }
+   }
+   m_aEffects {
+    SCR_TimedParticle Particle_Dust_01_Start {
+     m_fParticlesMultiplier 0.05
+    }
+    SCR_TimedParticle Particle_Wood_01_Start {
+     m_bSnapToTerrain 1
+     m_fParticlesMultiplier 1.7
+    }
+    SCR_TimedPrefab Prefab_Ruins_01 {
+     m_bPersistent 1
+     m_sRuinsPrefab "{49D52622EFE62CE7}Prefabs/Structures/Infrastructure/Naval/Sheds/PierShed_01/Dst/PierShed_01_ruin.et"
+    }
+    SCR_TimedSound Sound_Wood_01_PreStart {
+     m_AudioSourceConfiguration SCR_AudioSourceConfiguration "{6152BCFF2F3C04A5}" {
+      m_sSoundProject "{7D077AA967E261F6}Sounds/Destruction/Buildings/Destruction_Buildings_Wood_Small.acp"
+     }
+    }
+   }
+   m_aInteriorQueryBoundingBoxes {
+    SCR_InteriorBoundingBox "{62B29C10F02E0EFA}" {
+     m_vCenter PointInfo "{68497080B1F9B1CF}" {
+      Offset 0 2.8501 0
+     }
+     m_vScale 12 8 14
+    }
+   }
+  }
+ }
+ coords 58.591 0.001 29.809
+ {
+  $grp GenericEntity : "{A8FA561E6D07478B}Prefabs/Structures/BuildingParts/Doors/Door_PierShed_01_A_LEFT_EXT_COV_B.et" {
+   {
+    ID "68497080BE06E2FF"
+    components {
+     ActionsManagerComponent "{F32B667C3C823800}" {
+      Enabled 0
+     }
+     Hierarchy "{7642683606C70747}" {
+      PivotID "Socket_double_left_002"
+     }
+    }
+   }
+   {
+    ID "68497080BE075A8A"
+    components {
+     ActionsManagerComponent "{F32B667C3C823800}" {
+      Enabled 0
+     }
+     Hierarchy "{7642683606C70747}" {
+      PivotID "Socket_double_left_006"
+     }
+    }
+   }
+   {
+    ID "68497080BE075A8B"
+    components {
+     ActionsManagerComponent "{F32B667C3C823800}" {
+      Enabled 0
+     }
+     Hierarchy "{7642683606C70747}" {
+      PivotID "Socket_double_left_003"
+     }
+    }
+   }
+   {
+    ID "68497080BE077645"
+    components {
+     ActionsManagerComponent "{F32B667C3C823800}" {
+      Enabled 0
+     }
+     Hierarchy "{7642683606C70747}" {
+      PivotID "Socket_double_left_004"
+     }
+    }
+   }
+  }
+  $grp GenericEntity : "{B6C340C78D5D5338}Prefabs/Structures/BuildingParts/Doors/Door_PierShed_01_A_RIGHT_EXT_COV_B.et" {
+   {
+    ID "68497080BE061CFE"
+    components {
+     ActionsManagerComponent "{F32B667C3C823800}" {
+      Enabled 0
+     }
+     Hierarchy "{7642683606C70747}" {
+      PivotID "Socket_double_right_006"
+     }
+    }
+   }
+   {
+    ID "68497080BE06E2FC"
+    components {
+     ActionsManagerComponent "{F32B667C3C823800}" {
+      Enabled 0
+     }
+     Hierarchy "{7642683606C70747}" {
+      PivotID "Socket_double_right_004"
+     }
+    }
+    coords 0 0 0
+   }
+   {
+    ID "68497080BE06ECF2"
+    components {
+     ActionsManagerComponent "{F32B667C3C823800}" {
+      Enabled 0
+     }
+     Hierarchy "{7642683606C70747}" {
+      PivotID "Socket_double_right_003"
+     }
+    }
+   }
+   {
+    ID "68497080BE06ECF3"
+    components {
+     ActionsManagerComponent "{F32B667C3C823800}" {
+      Enabled 0
+     }
+     Hierarchy "{7642683606C70747}" {
+      PivotID "Socket_double_right_002"
+     }
+    }
+   }
+  }
+  $grp GenericEntity : "{C9DE18E34AEADA31}Prefabs/Structures/BuildingParts/Doors/DoorBoarded_PierShed_01_A.et" {
+   {
+    ID "68497080B1F9B1EA"
+    components {
+     Hierarchy "{612AE78C85563E26}" {
+      PivotID "Socket_door_005"
+     }
+    }
+   }
+   {
+    ID "68497080BE061CF1"
+    components {
+     Hierarchy "{612AE78C85563E26}" {
+      PivotID "Socket_door_001"
+     }
+    }
+   }
+  }
+  GameEnvironmentProbeEntity : "{F2530F641C68D320}Prefabs/Structures/Agriculture/Barn/Barn_E_01/BuildingAddons/Probe_Barn_E_01.et" {
+   ID "68497080B1F9B1E8"
+   coords 1.326 1.758 0
+  }
+ }
+}

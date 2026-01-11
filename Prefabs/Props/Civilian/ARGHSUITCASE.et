@@ -35,6 +35,7 @@ GenericEntity : "{4CC2C69DE1AEF103}Prefabs/Props/Core/DestructibleMultiPhase_Pro
    Enabled 1
   }
  }
+ coords 0.812 12.276 -0.309
  {
   $grp GenericEntity : "{CFA2C84A318F29B1}Prefabs/Items/Core/10000ARGHDE_Item_Cash.et" {
    {

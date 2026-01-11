@@ -12088,21 +12088,6 @@ $grp Tree : "{B2BB2CDAD0EE1CDA}Prefabs/Vegetation/Plant/Rubus_Gracilis/p_rubus_g
   scale 0.902
  }
 }
-GenericEntity : "{B6C340C78D5D5338}Prefabs/Structures/BuildingParts/Doors/Door_PierShed_01_A_RIGHT_EXT_COV_B.et" {
- components {
-  ActionsManagerComponent "{F32B667C3C823800}" {
-   Enabled 0
-  }
-  Hierarchy "{7642683606C70747}" {
-   Enabled 1
-   PivotID "Socket_door_right_02"
-   AutoTransform 1
-  }
- }
- coords 511.127 7.771 12305.426
- angles 89.067 -112.704 -103.236
- scale 0.54
-}
 $grp Tree : "{B74EEF1D3BBCE66C}Prefabs/Vegetation/Plant/Rubus_Gracilis/p_rubus_gracilis_1l_aut.et" {
  {
   coords 8887.36 0 9581.583
@@ -18882,11 +18867,6 @@ $grp Tree : "{E07EA724C6E0EDE4}Prefabs/Vegetation/Plant/p_urtica_dioica_0s_aut.e
   angles -2.677 23.182 2.951
   scale 1.295
  }
-}
-GenericEntity : "{E641FDA9C7D9AA72}Prefabs/Props/Construction/WoodHolder_01.et" {
- coords 511.745 7.766 12304.777
- angles 0 -99.57 179.561
- scale 0.79
 }
 $grp SCR_DestructibleBuildingEntity : "{EA4612E149DB12A8}Prefabs/Structures/Ruins/House_Ruin_1I01/House_Ruin_1I01_V8_base.et" {
  {

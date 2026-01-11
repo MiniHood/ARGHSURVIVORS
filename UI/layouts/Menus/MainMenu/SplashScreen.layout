@@ -1,0 +1,18 @@
+FrameWidgetClass {
+ {
+  FrameWidgetClass "{5874BDFB3137CAC7}" {
+   Prefab "{5874BDFB3137CAC7}"
+   {
+    ScaleWidgetClass "{66C6CD1494938C78}" {
+     Prefab "{66C6CD1494938C78}"
+     {
+      ImageWidgetClass "{66C6CD145C381A7D}" {
+       Prefab "{66C6CD145C381A7D}"
+       Texture "{5A45DACD96EBD38E}Assets/Images/shaded.edds"
+      }
+     }
+    }
+   }
+  }
+ }
+}

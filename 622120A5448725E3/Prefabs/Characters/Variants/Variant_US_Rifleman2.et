@@ -4,10 +4,9 @@ Bacon_622120A5448725E3_InfectedCharacter : "{2A5BF0C801520AE5}622120A5448725E3/P
   SCR_CharacterDamageManagerComponent "{55872AD7B4E959F2}" {
    "Additional hit zones" {
     SCR_CharacterHealthHitZone Health {
-     MaxHealth 30.000
+     MaxHealth 30
     }
    }
   }
  }
-
 }

@@ -1,0 +1,8 @@
+GenericEntity : "{5EC6836A5694F691}Prefabs/Props/Military/Furniture/FurnitureMilitary_base.et" {
+ ID "5272E314F01B2DBE"
+ components {
+  DL_LootSpawnComponent "{66B442257E6A201D}" {
+   Enabled 0
+  }
+ }
+}

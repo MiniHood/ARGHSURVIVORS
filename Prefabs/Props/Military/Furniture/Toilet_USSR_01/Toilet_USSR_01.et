@@ -1,0 +1,33 @@
+GenericEntity : "{D00C2D1A120A9648}Prefabs/Props/Military/Furniture/Toilet_USSR_01/Toilet_USSR_01_base.et" {
+ ID "F0DBA538AC2A0552"
+ components {
+  ActionsManagerComponent "{6626BB4E6D00D725}" {
+   ActionContexts {
+    UserActionContext "{684836D8AA773000}" {
+     ContextName "default"
+     Position PointInfo "{6848181CE1D82F6A}" {
+      Offset -0.0283 0.0137 0.4745
+     }
+     Radius 0.7
+     Omnidirectional 0
+    }
+   }
+   additionalActions {
+    ARGH_DrinkWaterPlayerAction "{684836D831343B4F}" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo UIInfo "{66C62327CC09604C}" {
+      Name "Drink Toilet Water"
+     }
+     Duration 2
+     "Sort Priority" -1
+     m_iWaterValue 0.1
+    }
+   }
+  }
+  ActionsManagerComponent "{6848181C9251F01B}" {
+   Enabled 0
+  }
+ }
+}

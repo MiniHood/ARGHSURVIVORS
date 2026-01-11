@@ -45,7 +45,7 @@ SCR_FactionManager : "{4A188E44289B9A50}Prefabs/MP/Managers/Factions/FactionMana
   SCR_Faction "{6CA3CA9D88A0DE11}" {
    m_bIsPlayable 1
   }
-  SCR_Faction "{6CA3CA9D88B8FDFF}" : "{884B59401973C5AA}Configs/Factions/ARGH.conf" {
+  SCR_Faction "{6CA3CA9D88B8FDFF}" {
    m_bIsPlayable 0
   }
   SCR_Faction "{670413C551B81B52}" {

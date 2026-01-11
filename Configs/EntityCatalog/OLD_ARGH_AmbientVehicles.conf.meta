@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{B8EF144730EA7CB3}Configs/EntityCatalog/OLD_ARGH_AmbientVehicles.conf"
+ Configurations {
+  CONFResourceClass PC {
+  }
+  CONFResourceClass XBOX_ONE : PC {
+  }
+  CONFResourceClass XBOX_SERIES : PC {
+  }
+  CONFResourceClass PS4 : PC {
+  }
+  CONFResourceClass PS5 : PC {
+  }
+  CONFResourceClass HEADLESS : PC {
+  }
+ }
+}

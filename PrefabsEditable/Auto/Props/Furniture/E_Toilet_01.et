@@ -1,0 +1,32 @@
+GenericEntity : "{F49E9F098C6069AD}Prefabs/Props/Furniture/Toilet_01.et" {
+ ID "6093E737CD81A6FB"
+ components {
+  ActionsManagerComponent "{7A91D3C7B21F4E10}" {
+   ActionContexts {
+    UserActionContext "{7A91D3C7B21F4E11}" {
+     ContextName "Default"
+     Position PointInfo "{7A91D3C7B21F4E12}" {
+     }
+     Radius 0.7
+     Omnidirectional 0
+    }
+   }
+   additionalActions {
+    ARGH_DrinkWaterPlayerAction "{7A91D3C7B21F4E13}" {
+     ParentContextList {
+      "Default"
+     }
+     UIInfo UIInfo "{7A91D3C7B21F4E14}" {
+      Name "Drink Toilet Water"
+     }
+     Duration 2
+     "Sort Priority" -1
+     m_iWaterValue 0.1
+    }
+   }
+  }
+  RplComponent "{7A91D3C7B21F4E15}" {
+   Enabled 1
+  }
+ }
+}

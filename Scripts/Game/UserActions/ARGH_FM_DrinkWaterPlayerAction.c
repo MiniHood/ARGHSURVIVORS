@@ -13,7 +13,26 @@ modded class FM_DrinkWaterPlayerAction
 	{
 		if (characterOwner)
 		{
-			SCR_CharacterControllerComponent metabolismComponent = SCR_CharacterControllerComponent.Cast(characterOwner.FindComponent(SCR_CharacterControllerComponent));
+			IEntity resolvedOwner = characterOwner;
+			SCR_PlayerController pc = SCR_PlayerController.Cast(characterOwner);
+			if (pc)
+			{
+				IEntity controlled = pc.GetControlledEntity();
+				if (!controlled)
+					controlled = pc.GetMainEntity();
+
+				if (controlled)
+					resolvedOwner = controlled;
+			}
+
+			if (resolvedOwner && !SCR_CharacterControllerComponent.Cast(resolvedOwner.FindComponent(SCR_CharacterControllerComponent)))
+			{
+				IEntity parent = resolvedOwner.GetParent();
+				if (parent)
+					resolvedOwner = parent;
+			}
+
+			SCR_CharacterControllerComponent metabolismComponent = SCR_CharacterControllerComponent.Cast(resolvedOwner.FindComponent(SCR_CharacterControllerComponent));
 			if (metabolismComponent)
 			{
 				Print("SCR_CharacterControllerComponent found.");

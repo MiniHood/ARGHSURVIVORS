@@ -29,6 +29,7 @@ class PauseMenuUI : ChimeraMenuBase
 	protected bool m_bLogoutPending;
 	protected int m_iLogoutRemaining;
 	protected vector m_vLogoutStartPos;
+	protected bool m_bLogoutSaveRequested;
 
 	const string EXIT_SAVE = "Run Away";
 	const string EXIT_NO_SAVE = "Run Away";
@@ -510,10 +511,40 @@ class PauseMenuUI : ChimeraMenuBase
 		m_vLogoutStartPos = controlled.GetOrigin();
 		m_iLogoutRemaining = LOGOUT_COUNTDOWN_SECONDS;
 		m_bLogoutPending = true;
+		RequestLogoutSave();
 
 		GetGame().GetCallqueue().Remove(UpdateLogoutCountdown);
 		GetGame().GetCallqueue().CallLater(UpdateLogoutCountdown, 1000, true);
 		UpdateExitButtonLabel();
+	}
+
+	//------------------------------------------------------------------------------------------------
+	protected void RequestLogoutSave()
+	{
+		if (m_bLogoutSaveRequested)
+			return;
+
+		if (IsSavingOnExit())
+			return;
+
+		SaveGameManager saveManager = GetGame().GetSaveGameManager();
+		if (!saveManager)
+			return;
+
+		if (!saveManager.IsSavingAllowed() || !saveManager.IsSavingPossible() || saveManager.IsBusy())
+			return;
+
+		int playerId = -1;
+		PlayerController pc = GetGame().GetPlayerController();
+		if (pc)
+			playerId = pc.GetPlayerId();
+
+		string saveName = "Logout";
+		if (playerId >= 0)
+			saveName = string.Format("Logout_%1", playerId);
+
+		m_bLogoutSaveRequested = true;
+		saveManager.RequestSavePoint(ESaveGameType.MANUAL, saveName);
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -567,6 +598,7 @@ class PauseMenuUI : ChimeraMenuBase
 
 		m_bLogoutPending = false;
 		m_iLogoutRemaining = 0;
+		m_bLogoutSaveRequested = false;
 		GetGame().GetCallqueue().Remove(UpdateLogoutCountdown);
 		UpdateExitButtonLabel();
 

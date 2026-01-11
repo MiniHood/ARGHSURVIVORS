@@ -1,0 +1,13 @@
+GenericEntity : "{FA66F415264D1555}Prefabs/Structures/Infrastructure/Waterworks/WellPump_01/WellPump_01_blue.et" {
+ ID "5272E317A914F6DB"
+ components {
+  ActionsManagerComponent "{66A428372F93D310}" {
+   ActionContexts {
+    UserActionContext "{66A42837C00643A0}" {
+     Omnidirectional 0
+    }
+   }
+  }
+ }
+ coords 54.924 1 94.913
+}

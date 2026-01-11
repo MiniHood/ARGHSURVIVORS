@@ -10,7 +10,7 @@ GenericEntity : "{4CC2C69DE1AEF103}Prefabs/Props/Core/DestructibleMultiPhase_Pro
     }
    }
    additionalActions {
-    FM_DrinkWaterPlayerAction "{B2C3D4E5F60789A4}" {
+    ARGH_DrinkWaterPlayerAction "{B2C3D4E5F60789A4}" {
      ParentContextList {
       "Default"
      }

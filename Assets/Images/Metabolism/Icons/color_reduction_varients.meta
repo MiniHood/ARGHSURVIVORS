@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{9BB26BFC9C3A53EF}Assets/Images/Metabolism/Icons/color_reduction_varients"
+ Configurations {
+  FolderResourceClass PC {
+  }
+  FolderResourceClass XBOX_ONE : PC {
+  }
+  FolderResourceClass XBOX_SERIES : PC {
+  }
+  FolderResourceClass PS4 : PC {
+  }
+  FolderResourceClass PS5 : PC {
+  }
+  FolderResourceClass HEADLESS : PC {
+  }
+ }
+}

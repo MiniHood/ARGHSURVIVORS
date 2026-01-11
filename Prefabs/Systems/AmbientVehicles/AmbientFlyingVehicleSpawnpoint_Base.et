@@ -1,0 +1,20 @@
+GenericEntity {
+ ID "6E6F06F2AEDE4D0B"
+ components {
+  Persistence "{6854B61CD75517B3}" {
+  }
+  ARGH_SCR_AmbientFlyingVehicleSpawnPointComponent "{0E8EFB9D5BE6F7F8}" {
+   m_aIncludedEditableEntityLabels {
+    ARGH_AMBIENT_FLYING_VEHICLES
+   }
+   m_aExcludedEditableEntityLabels {
+   }
+  }
+  SCR_FactionAffiliationComponent "{6854B61CD948A482}" {
+  }
+ }
+ editor EntityEditorProps "{6854B61F0C970744}" {
+  Color 1 0 0.6697 1
+ }
+ coords 0 0.879 0
+}

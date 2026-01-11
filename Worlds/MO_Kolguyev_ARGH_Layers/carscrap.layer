@@ -3836,6 +3836,11 @@ $grp GenericEntity : "{F4BB6B6A0486F797}Prefabs/Props/Industrial/BarrelMetal_01_
   angles 0 43.257 0
  }
  {
+  components {
+   DL_LootSpawnComponent "{66B442257E6A201D}" {
+    Enabled 0
+   }
+  }
   coords 2673.192 24.658 5682.674
  }
  {
@@ -3887,6 +3892,11 @@ $grp GenericEntity : "{F4BB6B6A0486F797}Prefabs/Props/Industrial/BarrelMetal_01_
   angles 0 -40.146 0
  }
  {
+  components {
+   DL_LootSpawnComponent "{66B442257E6A201D}" {
+    Enabled 0
+   }
+  }
   coords 2673.64 24.658 5684.589
  }
  {
@@ -3898,9 +3908,19 @@ $grp GenericEntity : "{F4BB6B6A0486F797}Prefabs/Props/Industrial/BarrelMetal_01_
   angles 0 47.73 0
  }
  {
+  components {
+   DL_LootSpawnComponent "{66B442257E6A201D}" {
+    Enabled 0
+   }
+  }
   coords 2673.634 24.658 5683.868
  }
  {
+  components {
+   DL_LootSpawnComponent "{66B442257E6A201D}" {
+    Enabled 0
+   }
+  }
   coords 2672.554 24.658 5683.476
  }
  {

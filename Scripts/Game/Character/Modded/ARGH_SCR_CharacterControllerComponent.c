@@ -7,7 +7,7 @@ class ARGH_MetabolismConfig : Managed
     [Attribute(defvalue: "0.004", uiwidget: UIWidgets.EditBox, desc: "Energy drain per second (base)")]
     float m_fBaseEnergyRate;
 
-    [Attribute(defvalue: "1.0", uiwidget: UIWidgets.EditBox, desc: "Rate scale (applies to hydration/energy base)")]
+    [Attribute(defvalue: "1.0", uiwidget: UIWidgets.EditBox, desc: "Rate scale (applies to base drain, damage, and regen)")]
     float m_fRateScale;
 
     [Attribute(defvalue: "2.0", uiwidget: UIWidgets.EditBox, desc: "Sprint multiplier")]
@@ -18,6 +18,9 @@ class ARGH_MetabolismConfig : Managed
 
     [Attribute(defvalue: "0.006", uiwidget: UIWidgets.EditBox, desc: "Starvation damage per second when empty")]
     float m_fStarvationDamageRate;
+
+    [Attribute(defvalue: "1.5", uiwidget: UIWidgets.EditBox, desc: "Blood damage multiplier while starving/dehydrated")]
+    float m_fBloodDamageMultiplier;
 
     [Attribute(defvalue: "0.010", uiwidget: UIWidgets.EditBox, desc: "Health regen per second when fed & hydrated")]
     float m_fHealthRegenRate;
@@ -55,6 +58,7 @@ modded class SCR_CharacterControllerComponent
                 if (bc.Get("m_fSprintMultiplier", tmpF)) cfg.m_fSprintMultiplier = tmpF;
                 if (bc.Get("m_fDehydrationDamageRate", tmpF)) cfg.m_fDehydrationDamageRate = tmpF;
                 if (bc.Get("m_fStarvationDamageRate", tmpF)) cfg.m_fStarvationDamageRate = tmpF;
+                if (bc.Get("m_fBloodDamageMultiplier", tmpF)) cfg.m_fBloodDamageMultiplier = tmpF;
                 if (bc.Get("m_fHealthRegenRate", tmpF)) cfg.m_fHealthRegenRate = tmpF;
                 if (bc.Get("m_fEmptyThreshold", tmpF)) cfg.m_fEmptyThreshold = tmpF;
                 s_MetabolismConfig = cfg;
@@ -90,16 +94,23 @@ modded class SCR_CharacterControllerComponent
     private float m_fSprintMultiplier = 2.0;
     private float m_fDehydrationDamageRate = 0.0030;
     private float m_fStarvationDamageRate = 0.0030;
+    private float m_fBloodDamageMultiplier = 1.5;
     private float m_fHealthRegenRate = 0.0100;
     private float m_fEmptyThreshold = 0.02;
 
     private Widget m_wStatusRoot;
+    private Widget m_wStatusOverlay;
     private Widget m_wStatusRow;
     private TextWidget m_wWaterText;
     private TextWidget m_wFoodText;
     private TextWidget m_wStaminaText;
     private TextWidget m_wBloodText;
     private TextWidget m_wHealthText;
+    private ref array<Widget> m_aWaterIcons;
+    private ref array<Widget> m_aFoodIcons;
+    private ref array<Widget> m_aStaminaIcons;
+    private ref array<Widget> m_aBloodIcons;
+    private ref array<Widget> m_aHealthIcons;
     private int m_iPlayerID = -1;
 
     private IEntity characterOwner;
@@ -111,6 +122,7 @@ modded class SCR_CharacterControllerComponent
     {
         super.OnControlledByPlayer(owner, controlled);
         characterOwner = owner;
+        Print(string.Format("[ARGH_METABOLISM] OnControlledByPlayer controlled=%1 owner=%2 server=%3", controlled, owner, Replication.IsServer()));
 
         // Pull config once on first control
         ARGH_MetabolismConfig cfg = GetMetabolismConfig();
@@ -121,9 +133,10 @@ modded class SCR_CharacterControllerComponent
         m_fBaseHydrationRate = cfg.m_fBaseHydrationRate * rateScale;
         m_fBaseEnergyRate = cfg.m_fBaseEnergyRate * rateScale;
         m_fSprintMultiplier = cfg.m_fSprintMultiplier;
-        m_fDehydrationDamageRate = cfg.m_fDehydrationDamageRate;
-        m_fStarvationDamageRate = cfg.m_fStarvationDamageRate;
-        m_fHealthRegenRate = cfg.m_fHealthRegenRate;
+        m_fDehydrationDamageRate = cfg.m_fDehydrationDamageRate * rateScale;
+        m_fStarvationDamageRate = cfg.m_fStarvationDamageRate * rateScale;
+        m_fBloodDamageMultiplier = cfg.m_fBloodDamageMultiplier;
+        m_fHealthRegenRate = cfg.m_fHealthRegenRate * rateScale;
         m_fEmptyThreshold = cfg.m_fEmptyThreshold;
 
         if (controlled)
@@ -156,7 +169,7 @@ modded class SCR_CharacterControllerComponent
 
                     ClearOrphanedWidgets();
                     CreateStatusHUD();
-                    GetGame().GetCallqueue().CallLater(UpdateStatusHUD, 500, true);
+                    GetGame().GetCallqueue().CallLater(UpdateStatusHUD, 100, true);
                 }
             }
         }
@@ -229,7 +242,8 @@ modded class SCR_CharacterControllerComponent
     {
         if (m_fHydration > 0)
         {
-            float effectiveRate = m_fBaseHydrationRate * multiplier;
+            float levelFactor = 1.0 + m_fHydration; // 1.0..2.0, drains faster when full (DayZ-style)
+            float effectiveRate = m_fBaseHydrationRate * multiplier * levelFactor;
             m_fHydration = Math.Clamp(m_fHydration - (effectiveRate * timeSlice / 1000.0), 0.0, 1.0);
         }
         m_bIsThirsty = m_fHydration < 0.25;
@@ -239,7 +253,8 @@ modded class SCR_CharacterControllerComponent
     {
         if (m_fEnergy > 0)
         {
-            float effectiveRate = m_fBaseEnergyRate * multiplier;
+            float levelFactor = 1.0 + m_fEnergy; // 1.0..2.0, drains faster when full (DayZ-style)
+            float effectiveRate = m_fBaseEnergyRate * multiplier * levelFactor;
             m_fEnergy = Math.Clamp(m_fEnergy - (effectiveRate * timeSlice / 1000.0), 0.0, 1.0);
         }
         m_bIsHungry = m_fEnergy < 0.1;
@@ -284,6 +299,7 @@ modded class SCR_CharacterControllerComponent
 
         // damageRate is per second; timeSlice is in ms
         float damage = damageRate * (timeSlice / 1000.0);
+        float bloodDamage = damage * m_fBloodDamageMultiplier;
         float curHealth = dmgMgr.GetHealth();
         float maxHealth = dmgMgr.GetMaxHealth();
 
@@ -291,14 +307,14 @@ modded class SCR_CharacterControllerComponent
         SCR_CharacterDamageManagerComponent charDmg = SCR_CharacterDamageManagerComponent.Cast(dmgMgr);
         if (charDmg)
         {
-            SCR_CharacterBloodHitZone bloodHitZone = SCR_CharacterBloodHitZone.Cast(charDmg.GetBloodHitZone());
+            SCR_CharacterBloodHitZone bloodHitZone = charDmg.GetBloodHitZone();
             if (bloodHitZone)
             {
                 float curBlood = bloodHitZone.GetHealth();
                 float maxBlood = bloodHitZone.GetMaxHealth();
                 if (maxBlood > 0)
                 {
-                    float newBlood = Math.Clamp(curBlood - damage, 0.0, maxBlood);
+                    float newBlood = Math.Clamp(curBlood - bloodDamage, 0.0, maxBlood);
                     bloodHitZone.SetHealth(newBlood);
                 }
             }
@@ -322,7 +338,7 @@ modded class SCR_CharacterControllerComponent
         float maxHealth = dmgMgr.GetMaxHealth();
         if (maxHealth <= 0 || curHealth >= maxHealth) return;
 
-        float regenAmount = m_fHealthRegenRate * (timeSlice / 9.0);
+        float regenAmount = m_fHealthRegenRate * (timeSlice / 1000.0);
         float newHealth = Math.Clamp(curHealth + regenAmount, 0.0, maxHealth);
         
         dmgMgr.SetHealthScaled(newHealth / maxHealth);
@@ -461,12 +477,19 @@ modded class SCR_CharacterControllerComponent
         if (!m_wStatusRoot)
             return;
 
+        m_wStatusOverlay = m_wStatusRoot.FindAnyWidget("Metabolism_Overlay");
         m_wStatusRow = m_wStatusRoot.FindAnyWidget("Metabolism_Row");
         m_wWaterText = TextWidget.Cast(m_wStatusRoot.FindAnyWidget("Metabolism_WaterText"));
         m_wFoodText = TextWidget.Cast(m_wStatusRoot.FindAnyWidget("Metabolism_FoodText"));
         m_wStaminaText = TextWidget.Cast(m_wStatusRoot.FindAnyWidget("Metabolism_StaminaText"));
         m_wBloodText = TextWidget.Cast(m_wStatusRoot.FindAnyWidget("Metabolism_BloodText"));
         m_wHealthText = TextWidget.Cast(m_wStatusRoot.FindAnyWidget("Metabolism_HealthText"));
+
+        m_aWaterIcons = BuildIconVariants("Metabolism_WaterIcon");
+        m_aFoodIcons = BuildIconVariants("Metabolism_FoodIcon");
+        m_aStaminaIcons = BuildIconVariants("Metabolism_StaminaIcon");
+        m_aBloodIcons = BuildIconVariants("Metabolism_BloodIcon");
+        m_aHealthIcons = BuildIconVariants("Metabolism_HealthIcon");
 
         UpdateHUDPosition();
     }
@@ -509,7 +532,7 @@ modded class SCR_CharacterControllerComponent
             if (maxHealth > 0)
                 healthPercent = Math.Clamp(Math.Round((curHealth / maxHealth) * 100), 0, 100);
             
-            SCR_CharacterBloodHitZone bloodHitZone = SCR_CharacterBloodHitZone.Cast(dmgMgr.GetBloodHitZone());
+            SCR_CharacterBloodHitZone bloodHitZone = dmgMgr.GetBloodHitZone();
             if (bloodHitZone)
             {
                 float currentBlood = bloodHitZone.GetHealth();
@@ -524,28 +547,101 @@ modded class SCR_CharacterControllerComponent
         m_wStaminaText.SetText(string.Format("%1%%", staminaPercent));
         m_wBloodText.SetText(string.Format("%1%%", bloodPercent));
         m_wHealthText.SetText(string.Format("%1%%", healthPercent));
+
+        UpdateStatusColor(m_wWaterText, hydrationPercent);
+        UpdateStatusColor(m_wFoodText, energyPercent);
+        UpdateStatusColor(m_wStaminaText, staminaPercent);
+        UpdateStatusColor(m_wBloodText, bloodPercent);
+        UpdateStatusColor(m_wHealthText, healthPercent);
+
+        UpdateIconVariants(m_aWaterIcons, hydrationPercent);
+        UpdateIconVariants(m_aFoodIcons, energyPercent);
+        UpdateIconVariants(m_aStaminaIcons, staminaPercent);
+        UpdateIconVariants(m_aBloodIcons, bloodPercent);
+        UpdateIconVariants(m_aHealthIcons, healthPercent);
+    }
+
+    private array<Widget> BuildIconVariants(string baseName)
+    {
+        array<Widget> icons = new array<Widget>();
+        if (!m_wStatusRoot)
+            return icons;
+
+        icons.Insert(m_wStatusRoot.FindAnyWidget(baseName + "_100"));
+        icons.Insert(m_wStatusRoot.FindAnyWidget(baseName + "_75"));
+        icons.Insert(m_wStatusRoot.FindAnyWidget(baseName + "_45"));
+        icons.Insert(m_wStatusRoot.FindAnyWidget(baseName + "_20"));
+        icons.Insert(m_wStatusRoot.FindAnyWidget(baseName + "_0"));
+        return icons;
+    }
+
+    private void UpdateIconVariants(array<Widget> icons, int percent)
+    {
+        if (!icons || icons.Count() == 0)
+            return;
+
+        int index = 4;
+        if (percent >= 90)
+            index = 0;
+        else if (percent >= 75)
+            index = 1;
+        else if (percent >= 45)
+            index = 2;
+        else if (percent >= 20)
+            index = 3;
+
+        for (int i = 0; i < icons.Count(); i++)
+        {
+            Widget icon = icons[i];
+            if (icon)
+                icon.SetVisible(i == index);
+        }
+    }
+
+    private void UpdateStatusColor(TextWidget widget, int percent)
+    {
+        if (!widget)
+            return;
+
+        if (percent > 10)
+        {
+            widget.SetColor(Color.White);
+            return;
+        }
+
+        float clampedPercent = Math.Clamp(percent, 0, 10);
+        float severity = 1.0 - (clampedPercent / 10.0);
+        float hz = 1.0 + (4.0 * severity);
+
+        float timeSec = 0.0;
+        World world = GetGame().GetWorld();
+        if (world)
+            timeSec = world.GetWorldTime() * 0.001;
+
+        float pulse = (Math.Sin(timeSec * 6.2831853 * hz) + 1.0) * 0.5;
+        float intensity = Math.Clamp(pulse, 0.0, 1.0);
+        float greenBlue = 1.0 - intensity;
+
+        widget.SetColor(new Color(1.0, greenBlue, greenBlue, 1.0));
     }
 
     override void UpdateHUDPosition()
     {
-        if (!m_wStatusRoot)
+        if (!m_wStatusRoot || !m_wStatusOverlay)
             return;
 
         WorkspaceWidget workspace = GetGame().GetWorkspace();
         if (!workspace)
             return;
 
-        float screenWidth = workspace.GetWidth();
-        float screenHeight = workspace.GetHeight();
+        float widgetWidth = 600;  // fits all five icon+text blocks
+        float widgetHeight = 60;
+        float xPos = 0.0;   // anchor is bottom-center
+        float yPos = -24.0; // bottom margin
 
-        float widgetWidth = 320;  // fits icons + text
-        float widgetHeight = 40;
-
-        float xPos = (screenWidth - widgetWidth) * 0.5; // center horizontally
-        float yPos = screenHeight - widgetHeight - 24;  // bottom with margin
-
-        FrameSlot.SetPos(m_wStatusRoot, xPos, yPos);
-        FrameSlot.SetSize(m_wStatusRoot, widgetWidth, widgetHeight);
+        // Anchor is bottom-center; position relative to that.
+        FrameSlot.SetPos(m_wStatusOverlay, xPos, yPos);
+        FrameSlot.SetSize(m_wStatusOverlay, widgetWidth, widgetHeight);
     }
 
     override void DestroyStatusHUD()
@@ -555,12 +651,18 @@ modded class SCR_CharacterControllerComponent
             m_wStatusRoot.RemoveFromHierarchy();
             m_wStatusRoot = null;
         }
+        m_wStatusOverlay = null;
         m_wStatusRow = null;
         m_wWaterText = null;
         m_wFoodText = null;
         m_wStaminaText = null;
         m_wBloodText = null;
         m_wHealthText = null;
+        m_aWaterIcons = null;
+        m_aFoodIcons = null;
+        m_aStaminaIcons = null;
+        m_aBloodIcons = null;
+        m_aHealthIcons = null;
     }
     
     // ==============================

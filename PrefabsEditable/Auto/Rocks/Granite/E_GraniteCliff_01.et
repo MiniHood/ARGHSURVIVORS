@@ -1,0 +1,10 @@
+SCR_IndestructibleEnvironmentalEntity : "{3F68EE5DCB004B10}Prefabs/Rocks/Granite/GraniteCliff_01.et" {
+ ID "5512A6BD321FC7B3"
+ components {
+  Persistence "{684C38499B717AA4}" {
+  }
+  SCR_EditableEntityComponent "{58910CB42762D472}" {
+   m_Flags 2952
+  }
+ }
+}
