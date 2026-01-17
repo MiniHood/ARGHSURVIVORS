@@ -406,21 +406,21 @@ modded class SCR_CharacterControllerComponent
     override bool IsThirsty() { return m_bIsThirsty; }
     override bool IsHungry() { return m_bIsHungry; }
 
-    void SetHydration(float value)
+    override void SetHydration(float value)
     {
         m_fHydration = Math.Clamp(value, 0.0, 1.0);
         m_bIsThirsty = m_fHydration < 0.25;
     }
 
-    void SetEnergy(float value)
+    override void SetEnergy(float value)
     {
         m_fEnergy = Math.Clamp(value, 0.0, 1.0);
         m_bIsHungry = m_fEnergy < 0.1;
     }
 
-    void SetMetabolismLoaded(bool value)
+    override void SetMetabolismLoaded(bool loaded)
     {
-        m_bMetabolismLoaded = value;
+        m_bMetabolismLoaded = loaded;
     }
 
     // ==============================
