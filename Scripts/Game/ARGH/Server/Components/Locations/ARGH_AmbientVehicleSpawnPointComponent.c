@@ -1054,6 +1054,13 @@
 			return Update(faction);
 		}
 
+		// Public helper for prefab bootstrap to refresh selection after loot system is ready.
+		void ARGH_RefreshNow()
+		{
+			SCR_Faction savedFaction = SCR_Faction.Cast(m_SavedFaction);
+			ForceUpdate(savedFaction);
+		}
+
 		// ------------------------------------------------------------
 		// UPDATE
 		// ------------------------------------------------------------
