@@ -157,11 +157,15 @@ class ARGH_SerializedInventoryItem
 {
 	string m_sPrefabPath;
 	int m_iQuantity;
+	float m_fHealthScaled;
+	bool m_bHasHealth;
 	
 	void ARGH_SerializedInventoryItem()
 	{
 		m_sPrefabPath = "";
 		m_iQuantity = 1;
+		m_fHealthScaled = 1.0;
+		m_bHasHealth = false;
 	}
 }
 
@@ -185,14 +189,13 @@ class InventoryStorageManagerComponentSerializer : ScriptedComponentSerializer
 		
 		// Get all items in inventory using non-deprecated API
 		array<IEntity> allItems();
-		int itemCount = invManager.GetItems(allItems, EStoragePurpose.PURPOSE_DEPOSIT);
+		int itemCount = invManager.GetItems(allItems, EStoragePurpose.PURPOSE_ANY);
 		
 		if (itemCount <= 0)
 			return ESerializeResult.DEFAULT;
 		
-		// Build a map of prefab -> quantity (for stackable efficiency)
-		map<string, int> itemMap();
-		
+		// Convert to serializable array (store per-item data)
+		array<ref ARGH_SerializedInventoryItem> items();
 		foreach (IEntity item : allItems)
 		{
 			if (!item)
@@ -206,23 +209,22 @@ class InventoryStorageManagerComponentSerializer : ScriptedComponentSerializer
 			if (prefabPath.IsEmpty())
 				continue;
 			
-			int currentCount = 0;
-			itemMap.Find(prefabPath, currentCount);
-			itemMap.Set(prefabPath, currentCount + 1);
-		}
-		
-		if (itemMap.IsEmpty())
-			return ESerializeResult.DEFAULT;
-		
-		// Convert to serializable array
-		array<ref ARGH_SerializedInventoryItem> items();
-		for (int i = 0; i < itemMap.Count(); i++)
-		{
 			ARGH_SerializedInventoryItem entry();
-			entry.m_sPrefabPath = itemMap.GetKey(i);
-			entry.m_iQuantity = itemMap.GetElement(i);
+			entry.m_sPrefabPath = prefabPath;
+			entry.m_iQuantity = 1;
+			
+			SCR_DamageManagerComponent dmgManager = SCR_DamageManagerComponent.Cast(item.FindComponent(SCR_DamageManagerComponent));
+			if (dmgManager)
+			{
+				entry.m_bHasHealth = true;
+				entry.m_fHealthScaled = dmgManager.GetHealthScaled();
+			}
+			
 			items.Insert(entry);
 		}
+		
+		if (items.IsEmpty())
+			return ESerializeResult.DEFAULT;
 		
 		// Write to context
 		context.WriteValue("inv_version", SERIALIZER_VERSION);
@@ -282,6 +284,16 @@ class InventoryStorageManagerComponentSerializer : ScriptedComponentSerializer
 				IEntity spawnedItem = GetGame().SpawnEntityPrefab(resource, GetGame().GetWorld(), params);
 				if (!spawnedItem)
 					continue;
+			
+				if (entry.m_bHasHealth)
+				{
+					SCR_DamageManagerComponent dmgManager = SCR_DamageManagerComponent.Cast(spawnedItem.FindComponent(SCR_DamageManagerComponent));
+					if (dmgManager)
+					{
+						float clampedHealth = Math.Clamp(entry.m_fHealthScaled, 0.0, 1.0);
+						dmgManager.SetHealthScaled(clampedHealth);
+					}
+				}
 				
 				bool inserted = invManager.TryInsertItem(spawnedItem);
 				if (!inserted)
